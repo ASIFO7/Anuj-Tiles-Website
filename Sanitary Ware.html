@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanitary Ware</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/Anuj Tiles.svg" type="image/svg+xml">
+</head>
+<style>header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensures the h1 can be absolutely positioned */
+}
+
+header .logo img {
+    max-width: 80px;
+    height: auto;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    position: absolute; /* Remove h1 from normal flow */
+    left: 50%; /* Center h1 horizontally */
+    transform: translateX(-50%); /* Perfectly center the h1 */
+    font-size: 24px;
+    flex: none; /* Remove flex behavior */
+}
+
+/* Tablet view (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .back-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+    }
+
+    .section-header p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile view (max-width: 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 20px 2%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 18px;
+        margin-top: 10px;
+        left: 50%; /* Ensure h1 stays centered in mobile */
+        transform: translateX(-50%); /* Keep it centered */
+    }
+
+    .back-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .section-header p {
+        font-size: 12px;
+    }
+}</style>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo"></a>
+        </div>
+        <h1>Sanitary ware</h1>
+        
+    </header>
+
+    <section id="sanitary-ware" class="custom-sanitary-ware-section">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="section-header text-center">
+                <h2 class="custom-section-title">Explore Our Sanitary Ware Collection</h2>
+                <p class="custom-section-subtitle" style="text-align: justify;">Anuj Tiles offers a sophisticated range of sanitary ware solutions ideal for various settings, including residential bathrooms that enhance everyday comfort and luxury, commercial spaces that provide robust and stylish options and the hospitality industry, where we create premium experiences in hotels and resorts. Explore our collection to find the perfect fit for your space!</p>
+            </div>
+    
+            <!-- Introduction Row -->
+            <div class="row align-items-center">
+                <!-- Intro Text -->
+                <div class="col-md-6 custom-text-content">
+                    <h3>About Healthware</h3>
+                    <p>Create a spacious and open look. The design enhances aesthetics while ensuring stability and easy installation. In areas like schools, airports and sports venues etc, these solutions provide practicality and are available in various styles to meet diverse needs, maintaining a cohesive design.</p>
+                    <p>Modern solutions with improved functionality add a contemporary touch and enhance user convenience.</p>
+                    <p>Durable materials are a key focus in both spaces, resisting scratches and stains while remaining hygienic and odour-resistant. With quieter operation and easy maintenance, these versatile designs come in a range of styles and colors to fit any decor, ensuring a functional and stylish environment.</p>
+                </div>
+                <!-- Feature Image -->
+                <div class="col-md-6 custom-image-content">
+                    <img src="./assets/images/Sanitary/Sanitary.PNG" alt="Sanitary Ware Example" class="img-fluid custom-sanitary-image" />
+                </div>
+            </div>
+
+<!-- Features and Benefits -->
+<!-- <div class="row custom-features mt-5">
+    <div class="col-md-12 mb-4 text-center">
+        <h3 class="custom-features-title">Why Healthware is the Best</h3>
+    </div>
+    <div class="col-md-6 custom-feature-section">
+        <div class="custom-feature-box">
+            <h4 class="custom-feature-heading">
+                <i class="fas fa-lightbulb" style="color: red; margin-right: 8px;"></i> Innovation
+            </h4>
+            <p>Healthware is a leading name in the bathroom industry, recognized for its innovative ceramic sanitary ware. We leverage advanced technologies to enhance comfort and convenience in everyday life.</p>
+        </div>
+        <div class="custom-feature-box">
+            <h4 class="custom-feature-heading">
+                <i class="fas fa-paint-brush" style="color: red; margin-right: 8px;"></i> Design
+            </h4>
+            <p>Our designs reflect modern styles while creating a sense of familiarity, seamlessly integrating into a variety of interior styles while ensuring exceptional quality and visual appeal.</p>
+        </div>
+    </div>
+    <div class="col-md-6 custom-feature-section">
+        <div class="custom-feature-box">
+            <h4 class="custom-feature-heading">
+                <i class="fas fa-heart" style="color: red; margin-right: 8px;"></i> Well-Being
+            </h4>
+            <p>We combine Western engineering principles with Eastern cultural influences to enrich the overall experience.</p>
+        </div>
+        <div class="custom-feature-box">
+            <h4 class="custom-feature-heading">
+                <i class="fas fa-leaf" style="color: red; margin-right: 8px;"></i> Naturalness
+            </h4>
+            <p>Cleanliness and hygiene are fundamental values that we prioritize in all our product offerings.</p>
+        </div>
+        <div class="custom-feature-box">
+            <h4 class="custom-feature-heading">
+                <i class="fas fa-shield-alt" style="color: red; margin-right: 8px;"></i> Bacteria-Free
+            </h4>
+            <p>Our sanitary ware features advanced Silver Nano technology. This coating utilizes silver nanoparticles to inhibit bacterial growth, guaranteeing a clean and safe environment.</p>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+ <!-- Faucet Specifications -->
+ <div class="row custom-specifications mt-5">
+    <div class="col-md-6 custom-specs-section">
+        <div class="custom-specs-content">
+            <h4><i class="fas fa-ruler-combined"></i> Types:</h4>
+            <ul class="custom-specs-list" style="list-style-type: none; padding-left: 0;">
+                <li>Closets</li>
+                <li>Urinals and Accessories</li>
+                <li>Flush Tank & Seat Cover</li>
+                <li>Wash Basins</li>
+            </ul>
+            <p>For more Sanitary ware Collections, please contact our team or refer to our catalogue.</p>
+        </div>
+    </div>
+    <div class="col-md-6 custom-specs-section">
+        <div class="custom-specs-content">
+            <h4><i class="fas fa-water"></i> Uses:</h4>
+            <p>Our sanitary ware solutions are designed with resistance to scratches and stains. With hygienic surfaces and quiet operation, they provide comfort and cleanliness. Their superior flushing and efficient water use make them perfect for modern living.</p><br>
+            <h4><i class="fas fa-cogs"></i> Features:</h4>
+            <p>Rimless Technology, 
+                Syphonic Flushing, 
+                Soft Close Seats, 
+                Durability, 
+                Innovative Designs and 
+                Advanced Flushing Technologies.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Ensure to include Font Awesome CSS in your HTML head -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+/* Products Row Styling */
+.custom-products-title {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.custom-product-list {
+    padding-left: 0;
+}
+
+.custom-product-item {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+    padding: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.custom-product-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Features and Benefits Section */
+.custom-features-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.custom-feature-section {
+    margin-bottom: 20px;
+}
+
+.custom-feature-box {
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.custom-feature-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .custom-feature-box {
+        margin-bottom: 30px;
+    }
+}
+</style>
+
+    
+            <!-- Quality Assurance Section -->
+            <div class="row custom-quality mt-5">
+                <div class="col-md-12 text-center">
+                    <h3>Experience the Sanitary Ware Difference</h3>
+                    <p style="text-align: justify;">At Healthware, we are committed to delivering sanitary solutions made with superior-quality materials to promote a healthier lifestyle. Our products ensure a safe and comfortable environment for you and your family.</p>
+                </div>
+            </div>
+    
+            <!-- Small Photo Gallery -->
+            <div class="row custom-photo-gallery mt-5">
+                <div class="col-md-4 col-sm-6">
+                    <div class="custom-gallery-item">
+                        <img src="./assets/images/sanitary 3.png" alt="High-end design" class="img-fluid custom-gallery-image"/>
+                        <p class="custom-gallery-caption" style="margin-right: 90px;"><strong>High-end design</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="custom-gallery-item">
+                        <img src="./assets/images/sanitary 2.png" alt="Classic appeal" class="img-fluid custom-gallery-image"/>
+                        <p class="custom-gallery-caption" style="margin-right: 70px;"><strong>Classic appeal</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="custom-gallery-item">
+                        <img src="./assets/images/Sanitary/model 01.jpg" alt="Efficient water usage" class="img-fluid custom-gallery-image"/>
+                        <p class="custom-gallery-caption" style="margin-right: 50px;"><strong>Efficient water usage</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Button for Catalogue Link -->
+            <div class="custom-catalogue-link text-center mt-5">
+                <a href="catelouge.html">
+                    <button class="btn btn-primary custom-catalogue-btn">For more Sanitary Ware designs, Refer Catalogue</button>
+                </a>
+            </div>
+    
+            <!-- Inline CSS for Button Styling -->
+            <style>
+                .custom-catalogue-btn {
+                    background-color: #ff0800;
+                    color: white;
+                    font-size: 18px;
+                    padding: 12px 30px;
+                    border: none;
+                    border-radius: 5px;
+                    transition: background-color 0.3s ease;
+                }
+    
+                .custom-catalogue-btn:hover {
+                    background-color: #b30c00;
+                    cursor: pointer;
+                }
+            </style>
+    
+        </div>
+    </section>
+    
+    <style>
+    /* Section Styling */
+    .custom-sanitary-ware-section {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+    }
+    
+    /* Heading Styling */
+    .custom-section-title {
+        font-size: 40px;
+        color: #000000;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+    
+    .custom-section-subtitle {
+        font-size: 18px;
+        color: #353535;
+        margin-bottom: 50px;
+        font-style: italic;
+    }
+    
+    /* Text Content Styling */
+    .custom-text-content h3 {
+        font-size: 28px;
+        color: #222;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    .custom-text-content p {
+        font-size: 16px;
+        color: #333333;
+        margin-bottom: 15px;
+    }
+    
+    /* Feature Image Styling */
+    .custom-image-content {
+        text-align: center;
+    }
+    
+    .custom-sanitary-image {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Products Section Styling */
+    .custom-products h3 {
+        font-size: 24px;
+        color: #222;
+        margin-bottom: 20px;
+    }
+    
+    .custom-product-list {
+        font-size: 16px;
+        color: #000000;
+    }
+    
+    /* Features and Benefits Section */
+    .custom-features {
+        margin-top: 60px;
+    }
+    
+    .custom-feature-section h4 {
+        font-size: 18px;
+        color: #222;
+        margin-top: 15px;
+    }
+    
+    .custom-feature-section p {
+        font-size: 16px;
+        color: #333;
+    }
+    
+    /* Quality Section Styling */
+    .custom-quality h3 {
+        font-size: 30px;
+        color: #222;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    .custom-quality p {
+        font-size: 16px;
+        color: #333333;
+        margin-bottom: 15px;
+    }
+    
+    /* Gallery Section Styling */
+    .custom-photo-gallery {
+        margin-top: 60px;
+    }
+    
+    .custom-gallery-item {
+        margin-bottom: 30px;
+    }
+    
+    .custom-gallery-image {
+        max-width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .custom-gallery-caption {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 17px;
+        color: #000000;
+    }
+     .custom-specifications {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-specs-section {
+    margin-bottom: 30px;
+}
+
+.custom-specs-content {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.custom-specs-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-specs-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.custom-specs-list li::before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    color: #cc1b1b;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.custom-specs-section h4 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.custom-specs-section i {
+    margin-right: 8px;
+    color: #cc1b1b;
+}
+
+.custom-specs-section p {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+
+    </style>
+    
+
+
+
+
+
+
+
+
+
+     <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+    <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading" style="font-size:x-large;">PRODUCTS</h2>
+                        <ul class="footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading" style="font-size:x-large;">ABOUT US</h2>
+                        <ul class="footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading" style="font-size:x-large;">ACTIVITIES</h2>
+                        <ul class="footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading" style="font-size:x-large;">CONTACT</h2>
+                        <ul class="footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+      <!-- Inline CSS for hover effect -->
+      <style>
+        .fab:hover {
+          opacity: 0.7; /* Optional: Reduce opacity on hover */
+        }
+        
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+          footer {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+          }
+  
+          .footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+          }
+  
+          .footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+          }
+  
+          .fab {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+          }
+        }
+  
+        @media (max-width: 480px) {
+          footer {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+          }
+  
+          .footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+          }
+  
+          .footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+          }
+  
+          .fab {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+          }
+        }
+        .footer-list {
+            list-style: none; /* Removes bullets */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+  
+        .footer-list li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
+  
+        .footer-list a {
+            text-decoration: none; /* Removes underline */
+            color: #fff; /* Sets text color */
+            transition: color 0.3s ease; /* Adds smooth transition for color change */
+        }
+  
+        .footer-list a:hover {
+            color: #ffcc00; /* Changes color on hover */
+        }
+  
+      </style>
+    
+</body>
+</html>

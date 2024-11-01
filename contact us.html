@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Contact Us | Aravind Ceramics</title>
+    <link rel="shortcut icon" href="./Anuj Tiles.svg" type="image/svg+xml">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* Dark background color */
+            color: #000000; /* White text color */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+ 
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                position: relative; /* Ensure relative positioning for mobile */
+                justify-content: center; /* Center the content */
+            }
+
+            header .logo {
+                position: absolute; /* Position logo absolutely to keep it on the left side */
+                left: 10px; /* Adjust as needed */
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center; /* Keep text centered */
+                margin: 0; /* Remove any extra margin */
+                width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+                transform: translateX(5px); /* Move text further to the right */
+            }
+        }
+
+        .back-button {
+            background-color: #eb2020;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-button i {
+            font-size: 18px; /* Adjust icon size */
+        }
+
+        .back-button:hover {
+            background-color: #79b827;
+            transform: translateY(-2px);
+        }
+
+
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            animation: slide-in 1s ease-out; /* Animation for sliding in */
+        }
+
+        
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            margin-bottom: 40px;
+        }
+
+        .about-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Styling for footer */
+        #colophon {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            clear: both; /* Ensure footer clears any floats */
+        }
+
+        #colophon ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #colophon ul li {
+            margin-bottom: 10px;
+        }
+
+        #colophon a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px; /* Adjusted padding for smaller screens */
+            }
+
+            header .logo img {
+                max-width: 60px; /* Adjusted logo size for smaller screens */
+            }
+
+            header h1 {
+                font-size: 24px; /* Adjusted font size for smaller screens */
+            }
+
+            .back-button {
+                padding: 10px 20px; /* Adjusted padding for smaller screens */
+            }
+
+            .about-section h2 {
+                font-size: 28px; /* Adjusted font size for smaller screens */
+            }
+
+            .about-section p {
+                font-size: 16px; /* Adjusted font size for smaller screens */
+            }
+        }
+
+      /* WE ARE HIRING BOX */
+.about-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hiring-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle gradient background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    transition: transform 0.2s; /* Animation for scaling effect */
+}
+
+.hiring-form:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333333; /* Dark gray for readability */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333333; /* Dark gray text */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="submit"] {
+    background-color: #007bff; /* Professional blue */
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s; /* Animation for scaling */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+.phone-input select {
+    width: 30%; /* Adjust width as needed */
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333333; /* Dark gray text */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.phone-input select:focus {
+    border-color: #007bff; /* Blue border on focus */
+}
+
+.phone-input input[type="tel"] {
+    flex: 1; /* Take remaining width */
+    padding: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333333; /* Dark gray text */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.phone-input input[type="tel"]:focus {
+    border-color: #007bff; /* Blue border on focus */
+}
+
+/* New */
+.phone-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: black; /* Ensure black text */
+}
+
+.selected-country {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff; /* White background for dropdown */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    min-width: 40px; /* Adjust as needed */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.selected-country:hover {
+    border-color: #007bff; /* Change border color on hover */
+}
+
+.country-code {
+    margin-right: 5px;
+}
+
+.country-name {
+    display: none;
+}
+
+.country-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 12%;
+    max-height: 100px;
+    overflow-y: auto;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;
+    background-color: #ffffff; /* White background for dropdown */
+    display: none;
+    z-index: 1000;
+}
+
+.country-option {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.country-option:hover {
+    background-color: #e6f0ff; /* Light blue on hover */
+}
+
+
+
+
+
+
+
+        /* Center the iframe */
+        .video-container {
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+
+        .video-container iframe {
+            max-width: 100%; /* Ensure iframe does not overflow */
+        }
+
+        /* Ensure responsiveness for iframe */
+        @media (max-width: 768px) {
+            .video-container {
+                overflow: hidden;
+                padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+                position: relative;
+                height: 0;
+                margin-top: 10px; /* Adjust margin for smaller screens */
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+/* Locations */
+.banner-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%; /* Maintain width to fit the container */
+    height: 800px; /* Set a fixed height for consistency */
+    object-fit: cover; /* Ensures the image fills the area without stretching */
+    display: block;
+}
+
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.slide-content h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.slide-content p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.navigation-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(88, 14, 14, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #e42121;
+}
+
+
+
+/* FAQ */
+
+.faq-section {
+    background-color: #f7f7f7; /* Light background for a clean, modern look */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+    background-color: #ffffff; /* White background for clarity and simplicity */
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    background-color: #007bff; /* Professional blue tone for corporate look */
+    color: white; /* White text for contrast */
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 20px;
+    text-align: left;
+    color: #333333; /* Dark gray for readability on light backgrounds */
+    background-color: #f9f9f9; /* Light gray for subtle contrast with white */
+}
+
+.faq-answer p {
+    margin-bottom: 10px;
+}
+
+.faq-answer ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.faq-answer ul li {
+    margin-bottom: 5px;
+}
+
+.faq-item.active {
+    border: 1px solid #007bff; /* Highlight active item with professional blue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.iframe-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #eee;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+ 
+/* Contact num Hover */
+ .contact-link {
+      color: rgb(0, 0, 0); /* Default color */
+      text-decoration: none; /* Remove underline */
+    }
+
+    .contact-link:hover {
+      color: #007bff; /* Color change on hover */
+      text-decoration: underline; /* Underline on hover */
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; padding: 10px;">
+        <div class="logo" style="position: relative; display: inline-block; margin-right: auto;">
+            <a href="index.html" style="display: block; width: 100%; max-width: 200px;">
+                <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+            </a>
+        </div>
+    </header>
+
+    <!-- Banner Image -->
+    <img src="./assets/images/Banner/contact us 3.jpg" alt="Banner Image" class="banner">
+
+    <main>
+
+        <section class="about-section">
+                <div class="section-header">
+                    <h2>We Are Hiring !</h2>
+                    <a href="./We Are Hiring.html" class="back-button">
+                        <i class="fas fa-briefcase"></i> Apply Now
+                    </a>
+                    <p>We are optimists who love to work together.</p>
+                </div>
+            <br><br><br>
+            <hr>
+            
+        
+            <div class="office-info">
+                <h2>Head Office</h2>
+                <div class="location-info">
+                    <div class="contact-details">
+                        <strong>Contact Details:</strong><br>
+                        
+                            <strong>Location:</strong> 354/2, Kundrathur Main Rd, Porur, Chennai, Tamil Nadu 600116 <br>
+                            <strong>Our Hours:</strong> 9:00 AM – 8:00 PM, Monday – Sunday <br><br>
+                            <strong>Contact Us:</strong> <br>
+                                
+                                Phone: <a href="tel:+919551698878" class="contact-link">95516 98878</a><br>
+                                Email: <a href="mailto:info@anujtiles.com" class="contact-link">info@anujtiles.com</a>
+                                
+                        
+                    </div><br><hr><br>
+                    <div class="location-map">
+                        <!-- Replace this with your map embed code -->
+                        <div class="iframe-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.15619252974!2d80.1461252758878!3d13.025723713687718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52611a610f25cf%3A0xc3a7c616a19609b6!2sAravind%20Ceramics%20Pvt%20Ltd%20-%20Anuj%20Tiles!5e0!3m2!1sen!2sin!4v1721710092394!5m2!1sen!2sin" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>.about-section .section-header h2,
+            .about-section .section-header p,
+            .about-section .office-info h2,
+            .about-section .contact-details,
+            .about-section .location-map {
+                opacity: 0;  /* Initially invisible */
+                transform: translateY(30px);  /* Start slightly below */
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            
+            .about-section .section-header h2.visible,
+            .about-section .section-header p.visible,
+            .about-section .office-info h2.visible,
+            .about-section .contact-details.visible,
+            .about-section .location-map.visible {
+                opacity: 1;  /* Fade in */
+                transform: translateY(0);  /* Slide into place */
+            }
+            
+            .about-section .contact-details {
+                transition-delay: 0.2s;  /* Delay for contact details */
+            }
+            
+            .about-section .location-map {
+                transition-delay: 0.4s;  /* Delay for location map */
+            }
+            </style>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const elementsToAnimate = [
+                        document.querySelector('.about-section .section-header h2'),
+                        document.querySelector('.about-section .section-header p'),
+                        document.querySelector('.about-section .office-info h2'),
+                        document.querySelector('.about-section .contact-details'),
+                        document.querySelector('.about-section .location-map')
+                    ];
+            
+                    const observerOptions = {
+                        threshold: 0.1  // Trigger when 10% of the item is visible
+                    };
+            
+                    // Callback function to handle visibility changes
+                    const observerCallback = (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');  // Add class when in view
+                            } else {
+                                entry.target.classList.remove('visible');  // Remove class when out of view
+                            }
+                        });
+                    };
+            
+                    // Create the intersection observer
+                    const observer = new IntersectionObserver(observerCallback, observerOptions);
+            
+                    // Observe each element to animate
+                    elementsToAnimate.forEach(element => {
+                        observer.observe(element);
+                    });
+                });
+            </script>
+            
+
+        <!-------------- BANNER ----------------->
+<hr><center> <h1>OUR BRANCH DETAILS</h1></center> <hr>
+        <section class="banner-section">
+            <div class="banner-slider">
+                <div class="slide">
+                    <img src="./assets/images/chennai.jpg" alt="Image 1">
+                    <div class="slide-content">
+                        <h2>CHENNAI</h2>
+                        <p>65-A, Kundrathur Main Rd, Porur, Chennai, Tamil Nadu 600116</p>
+                        <p>Cell: 9551698878</p>
+                        <a href="https://maps.app.goo.gl/S3TmTwQuD4q7Hk7L6" class="btn" data-location="Chennai" target="_blank" rel="noopener noreferrer">Get Direction</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./assets/images/erode.jpg" alt="Image 2">
+                    <div class="slide-content">
+                        <h2>ERODE</h2>
+                        <p>No-210, Erode to Perundurai Road, Vannakattuvalasu, Kathirampatti, Erode, Tamil Nadu - 638107</p>
+                        <p>Cell: 7299942323</p>
+                        <a href="https://maps.app.goo.gl/vJ9SPj3Kfd9HqNbWA" class="btn" data-location="Chennai" target="_blank" rel="noopener noreferrer">Get Direction</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./assets/images/pondicherry.png" alt="Image 3">
+                    <div class="slide-content">
+                        <h2>PONDICHERRY</h2>
+                        <p>No-4/154, Pondy - Tindivanam Main Road Auroville Post Vanur, Pattanur, Vilupuram, Tamil Nadu - 605101</p>
+                        <p>Cell: 7401837241</p>
+                        <a href="https://maps.app.goo.gl/Q96Fm5mpHc4e37Jx6" class="btn" data-location="Chennai" target="_blank" rel="noopener noreferrer">Get Direction</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./assets/images/arcot.jpg" alt="Image 4">
+                    <div class="slide-content">
+                        <h2>ARCOT</h2>
+                        <p>Survey No-53/2B2B1 & 53/2B2A, Arcot Bypass, Veppur, Ranipet, Tamil Nadu - 632509</p>
+                        <p>Cell: 9841414561</p>
+                        <a href="https://maps.app.goo.gl/WZzTZhRpKoquLj9T8" class="btn" data-location="Chennai" target="_blank" rel="noopener noreferrer">Get Direction</a>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="./assets/images/Tirunelveli Loc.jpg" alt="Image 3">
+                    <div class="slide-content">
+                        <h2>Tirunelveli</h2>
+                        <p>Aravind Ceramics Pvt Ltd, NP 210 Madurai Road, Shankar Nagar, Tirunelveli - 627357.</p>
+                        <p>Cell: 9841300822</p>
+                        <a href="https://maps.app.goo.gl/8kELu6B4ZgHMfj9N8" class="btn" data-location="Chennai" target="_blank" rel="noopener noreferrer">Get Direction</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-dots"></div>
+        </section>
+        
+        
+        
+
+        
+        
+       
+
+                <!------------ Request a Quote -------------->
+
+
+            
+
+                <section class="about-section hiring-section">
+                    <h2>Contact Us</h2>
+                    <p>Ready to work together? Build a project with us!</p>
+                
+                    <!-- Netlify Form Submission with Timestamp -->
+                    <form action="/submit-form" method="POST" class="hiring-form" name="contact" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="setTimestamp()">
+                        <!-- Hidden Netlify form name -->
+                        <input type="hidden" name="form-name" value="contact">
+                
+                        <!-- Hidden field for the form heading (this will be included in the submission but not visible) -->
+                        <input type="hidden" name="form-heading" value="Inquiry via Anuj Tiles Website !!!">
+                
+                        <!-- Hidden field for the timestamp (this is sent in the form submission) -->
+                        <input type="hidden" id="timestamp" name="timestamp">
+                
+                        <!-- Visible fields -->
+                        <div class="form-group">
+                            <label for="name">Name *</label><br>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="3" pattern="[A-Za-z\s]+" title="Name must contain only letters and spaces">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="company-name">Company Name</label><br>
+                            <input type="text" id="company-name" name="company-name" placeholder="Enter your company name">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="phone">Phone *</label><br>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}" title="Phone number must be 10 digits">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="email">Email *</label><br>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="subject">Subject *</label><br>
+                            <input type="text" id="subject" name="subject" placeholder="Enter subject" required minlength="5">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="message">Message *</label><br>
+                            <textarea id="message" name="message" rows="6" placeholder="Enter your message" required minlength="10"></textarea>
+                        </div>
+                
+                        <div class="form-group">
+                            <input type="submit" value="SEND MESSAGE">
+                        </div>
+                    </form>
+                </section>
+                
+                
+                <!-- JavaScript for Date and Time in IST -->
+                <script>
+                    function setTimestamp() {
+                    const timestampField = document.getElementById('timestamp');
+                    
+                    // Get the current UTC time
+                    const currentDateTime = new Date();
+
+                    // Convert to Indian Standard Time (UTC +5:30)
+                    const utcOffset = currentDateTime.getTimezoneOffset() * 60000; // Local time offset in milliseconds
+                    const ISTTimeOffset = 5.5 * 60 * 60 * 1000; // IST is UTC + 5:30 hours
+                    const ISTDateTime = new Date(currentDateTime.getTime() + ISTTimeOffset + utcOffset);
+
+                    // Format the date and time in IST
+                    const day = ("0" + ISTDateTime.getDate()).slice(-2);
+                    const month = ("0" + (ISTDateTime.getMonth() + 1)).slice(-2);
+                    const year = ISTDateTime.getFullYear();
+                    
+                    // Get hours and convert to 12-hour format
+                    let hours = ISTDateTime.getHours();
+                    const minutes = ("0" + ISTDateTime.getMinutes()).slice(-2);
+                    const seconds = ("0" + ISTDateTime.getSeconds()).slice(-2);
+                    const ampm = hours >= 12 ? 'PM' : 'AM';
+                    
+                    hours = hours % 12;
+                    hours = hours ? hours : 12; // If hour is 0, make it 12
+
+                    // Create formatted timestamp string in IST
+                    const formattedDateTime = `${day}-${month}-${year} ${hours}:${minutes}:${seconds} ${ampm} IST`;
+
+                    // Set the hidden input field value
+                    timestampField.value = formattedDateTime;
+                }
+
+                </script>
+                
+                
+                  
+                  
+        
+
+
+
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2 style="color: #000000;">FREQUENTLY ASKED QUESTIONS</h2>
+        
+                <div class="faq-item">
+                    <button class="faq-question">What sets Anuj Tiles apart from other tile companies?</button>
+                    <div class="faq-answer">
+                        <p>At&nbsp; Anuj Tiles, we distinguish ourselves through our dedication to high-quality products, innovative designs, and outstanding customer service. We are committed to providing customized solutions that not only meet but exceed our customers' expectations.</p>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <button class="faq-question">What tile sizes are available at Anuj Tiles?</button>
+                    <div class="faq-answer">
+                        <p>We offer a wide range of tile sizes to suit different spaces and styles:</p>
+                        <ul>
+                            <li>Bathroom tiles: 375x250mm, 450x300mm, 600x300mm</li>
+                            <li>Kitchen tiles: 375x250mm, 450x300mm, 600x300mm</li>
+                            <li>Elevation tiles: 375x250mm, 450x300mm, 600x300mm, 600x250mm</li>
+                            <li>Floor tiles: 300x300mm, 395x395mm, 600x600mm</li>
+                            <li>Nano series: 600x600mm</li>
+                            <li>HGVT (High Gloss Vitrified Tiles): 600x600mm, 1200x600mm</li>
+                            <li>PGVT (Polished Glazed Vitrified Tiles): 600x600mm, 1200x600mm</li>
+                            <li>SHG Tiles: 600x600mm</li>
+                            <li>Double charge tiles: 600x600mm, 800x800mm, 1200x600mm</li>
+                            <li>Slab tiles: 1600x800mm, 2400x1200mm, 2400x800mm, 1800x1200mm, 1600x1200mm, 3000x800mm</li>
+                            <li>Step tiles: 300x300mm, 1200x300mm, 1200x200mm, 900x300mm</li>
+                            <li>Cool roof tiles: 300x300mm</li>
+                            <li>Anti-slippery tiles: 300x300mm</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <button class="faq-question">What other products are available at Anuj Tiles?</button>
+                    <div class="faq-answer">
+                        <p>In addition to tiles, we offer a diverse range of other products:</p>
+                        <ul>
+                            <li><strong>Sanitaryware:</strong> Indian Closet, Urinals & Accessories, Western Closet, Single Piece Closet, Wall-hung Closet, Combo Collections, Wash Basin, Printed Wash Basin with Pedestal, Half/Full Pedestal, Designer Wash Basin, Table Top Wash Basin, Glass Bowl & Mirror, LED Mirror</li>
+                            <li><strong>Bath Fittings:</strong> Bib Tap, Long Body Bib Tap, Bib Tap 2 in 1, Sink Tap, Pillar Tap, Angle Tap, Project Angle Tap, Angle Tap 2 in 1, Swan Neck, Wall Mixer 2 in 1, Wall Mixer 3 in 1, Concealed Stop Tap</li>
+                            <li><strong>Komodo Tile Paste</strong></li>
+                            <li><strong>Stout – Manhole Cover</strong></li>
+                            <li><strong>Sink:</strong> Available sizes include 18x16x8, 24x18x8, 24x18x9, 24x18x10, 24x16x8, 37x18x8</li>
+                            <li><strong>Quartz Sink:</strong> 24x18x8, 24x18x10</li>
+                            <li><strong>Quartz Sink (with Drain Board):</strong> 36x18x8</li>
+                            <li><strong>Handmade Sink:</strong> 24x18x10</li>
+                        </ul>
+
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <button class="faq-question">How do I choose the right tile for my space?</button>
+                    <div class="faq-answer">
+                        <p>Choosing the right tile involves considering factors like the intended use, style preference and the space's usage level. Our expert staff can help you to make the best choice for your project.</p>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+    </main>
+ <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="custom-contact">
+    <footer id="custom-colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="custom-footer-heading">PRODUCTS</h2>
+                        <ul class="custom-footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="custom-footer-heading">ABOUT US</h2>
+                        <ul class="custom-footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="custom-footer-heading">ACTIVITIES</h2>
+                        <ul class="custom-footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="custom-footer-heading">CONTACT</h2>
+                        <ul class="custom-footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube custom-social-icon" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram custom-social-icon" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook custom-social-icon" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp custom-social-icon" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter custom-social-icon" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Inline CSS for hover effect -->
+<style>
+    .custom-social-icon:hover {
+        opacity: 0.7; /* Optional: Reduce opacity on hover */
+    }
+
+    /* Media Queries for responsive design */
+    @media (max-width: 768px) {
+        #custom-colophon {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+        }
+
+        .custom-footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+        }
+
+        .custom-footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+        }
+
+        .custom-footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+        }
+
+        .custom-social-icon {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        #custom-colophon {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+        }
+
+        .custom-footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+        }
+
+        .custom-footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+        }
+
+        .custom-footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+        }
+
+        .custom-social-icon {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+        }
+    }
+
+    .custom-footer-list {
+        list-style: none; /* Removes bullets */
+        padding: 0; /* Removes default padding */
+        margin: 0; /* Removes default margin */
+    }
+
+    .custom-footer-list li {
+        margin-bottom: 10px; /* Adds space between list items */
+    }
+
+    .custom-footer-list a {
+        text-decoration: none; /* Removes underline */
+        color: #fff; /* Sets text color */
+        transition: color 0.3s ease; /* Adds smooth transition for color change */
+    }
+
+    .custom-footer-list a:hover {
+        color: #ffcc00; /* Changes color on hover */
+    }
+</style>
+
+  
+        
+        
+        
+        
+
+       
+
+   
+
+    
+<!-- Script For WE ARE HIRING BOX -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const selectedCountry = document.querySelector(".selected-country");
+    const countryDropdown = document.querySelector(".country-dropdown");
+
+    // Show dropdown on click
+    selectedCountry.addEventListener("click", function () {
+        countryDropdown.style.display = countryDropdown.style.display === "block" ? "none" : "block";
+    });
+
+    // Handle country selection
+    const countryOptions = document.querySelectorAll(".country-option");
+    countryOptions.forEach(option => {
+        option.addEventListener("click", function () {
+            const code = option.getAttribute("data-code");
+            const name = option.getAttribute("data-name");
+
+            document.querySelector(".country-code").textContent = code;
+            document.querySelector(".country-name").textContent = name;
+
+            countryDropdown.style.display = "none";
+        });
+    });
+});
+
+    </script>
+<!-- JavaScript (for slider functionality using vanilla JavaScript) -->
+    <script>
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.querySelectorAll('.slide');
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = 'block';
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+
+    </script>
+
+<!-- JavaScript (for slider navigation and "Get Direction" functionality) -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.navigation-dots');
+    let currentSlide = 0;
+
+    // Create navigation dots
+    slides.forEach((slide, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) {
+            dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    // Slide navigation functions
+    function goToSlide(slideIndex) {
+        if (slideIndex < 0 || slideIndex >= slides.length) return;
+        slides[currentSlide].style.display = 'none';
+        slides[slideIndex].style.display = 'block';
+        dotsContainer.querySelector('.dot.active').classList.remove('active');
+        dotsContainer.querySelectorAll('.dot')[slideIndex].classList.add('active');
+        currentSlide = slideIndex;
+    }
+
+    // Automatic slideshow
+    let slideInterval = setInterval(() => {
+        goToSlide(currentSlide + 1);
+    }, 4000);
+
+    // Get Direction buttons functionality
+    const getDirectionButtons = document.querySelectorAll('.btn-primary');
+    getDirectionButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const location = this.getAttribute('data-location');
+            alert(`Redirecting to get directions for ${location}`);
+            // Implement your get directions logic here (e.g., redirect to Google Maps or other maps service)
+            });
+        });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach(function(question) {
+        question.addEventListener("click", function() {
+            const parent = this.parentNode;
+            parent.classList.toggle("active");
+        });
+    });
+});
+
+</script>
+</body>
+</html>

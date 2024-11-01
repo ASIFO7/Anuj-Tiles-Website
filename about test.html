@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>About Us | Aravind Ceramics</title>
+    <link rel="shortcut icon" href="./Anuj Tiles.svg" type="image/svg+xml">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                position: relative; /* Ensure relative positioning for mobile */
+                justify-content: center; /* Center the content */
+            }
+
+            header .logo {
+                position: absolute; /* Position logo absolutely to keep it on the left side */
+                left: 10px; /* Adjust as needed */
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center; /* Keep text centered */
+                margin: 0; /* Remove any extra margin */
+                width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+                transform: translateX(5px); /* Move text further to the right */
+            }
+        }
+        .back-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            outline: none;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+    background: url('./assets/images/hero-bg.jpg') no-repeat center center/cover;
+    color: black; /* Changed text color to black */
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-section h2 {
+    font-size: 48px;
+    margin: 0;
+    animation: fade-in 2s ease-in;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Light shadow for readability */
+}
+
+.hero-section p {
+    font-size: 24px;
+    margin-top: 20px;
+    animation: fade-in 2s ease-in 0.5s;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.feature {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 180px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.feature i {
+    font-size: 40px;
+    color:#d80000; /* Icon color */
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.feature p {
+    font-size: 16px;
+}
+
+.hero-section .cta-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 24px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: transparent; /* No background color */
+    text-decoration: none;
+    border: 2px solid #000000; /* Border for visibility */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: rgb(207, 0, 0);
+}
+
+.hero-section .cta-button:hover {
+    background-color: #6aaa36; /* Background color on hover */
+    transform: scale(1.05);
+}
+
+
+
+
+.about-section {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    position: relative;
+}
+
+.about-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid #ff0000; /* Bottom border for emphasis */
+    padding-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555; /* Darker text for readability */
+    text-align: justify; /* Justified text for a cleaner look */
+}
+
+.about-section strong {
+    color: #d80000; /* Highlighted text color */
+}
+
+.about-section em {
+    font-style: italic;
+    color: #555; /* Subtle emphasis for emphasis */
+}
+
+/* Optional: Add a decorative element */
+.about-section:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #c40000; /* Decorative line */
+    border-radius: 2px;
+}
+
+
+
+
+         /* Center the iframe */
+         .video-container {
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+
+        .video-container iframe {
+            max-width: 60%; /* Ensure iframe does not overflow */
+        }
+
+        /* Ensure responsiveness for iframe */
+.video-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.video-container iframe {
+    max-width: 100%; /* Ensure iframe does not overflow */
+}
+
+/* Tablet and Mobile Styles */
+@media (max-width: 768px) {
+    .video-container {
+        overflow: hidden;
+        padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+        position: relative;
+        height: 0;
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        margin-top: 10px; /* Reduce margin for smaller screens */
+    }
+
+    .video-container iframe {
+        /* Optional: Set a maximum width for very small screens */
+        max-width: 100%;    
+    }
+}
+
+        
+
+
+
+        .achievements-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-heading {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.achievements-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-card {
+    background: #ffcc00;
+    color: #333;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.main-card p {
+    font-size: 18px;
+    color: #333;
+}
+
+.achievements-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.achievement-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-icon {
+    font-size: 40px;
+    color: #d80000;
+    margin-bottom: 15px;
+}
+
+.achievement-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.achievement-info p {
+    font-size: 16px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .achievements-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .achievement-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+.banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            animation: slide-in 1s ease-out; /* Animation for sliding in */
+        }
+
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; padding: 10px;">
+        <div class="logo" style="position: relative; display: inline-block; margin-right: auto;">
+            <a href="index.html" style="display: block; width: 100%; max-width: 200px;">
+                <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+            </a>
+        </div>
+    </header>
+    <img src="./assets/images/Banner/About Us Banner...jpg" alt="Banner Image" class="banner">
+
+    <div class="hero-section">
+        <div class="overlay"></div>
+        <h2>Welcome to Aravind Ceramics</h2>
+        <p>Innovative solutions for your space. Quality and excellence in every product.</p>
+        
+        <div class="hero-features">
+            <div class="feature">
+                <i class="fas fa-trophy"></i>
+                <h3>Premium Quality</h3>
+                <p>Durable and stylish solutions built to last.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>Timely delivery to your doorstep.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>We're here to assist you anytime.</p>
+            </div>
+        </div>
+    
+        <div class="cta-container">
+            <a href="contact us.html" class="cta-button">Get in Touch</a>
+        </div>
+    
+        <div class="hero-testimonial">
+            <blockquote>
+                "Transform your home with our exquisite tiles—quality and design that impress!"
+                <cite>- Satisfied Customer</cite>
+            </blockquote>
+        </div>
+    </div>
+
+    <style>.hero-section h2,
+        .hero-section p,
+        .hero-section .feature,
+        .hero-section .cta-container,
+        .hero-section .hero-testimonial {
+            opacity: 0;  /* Initially invisible */
+            transform: translateY(30px);  /* Start slightly below */
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .hero-section h2.visible,
+        .hero-section p.visible,
+        .hero-section .feature.visible,
+        .hero-section .cta-container.visible,
+        .hero-section .hero-testimonial.visible {
+            opacity: 1;  /* Fade in */
+            transform: translateY(0);  /* Slide into place */
+        }
+        
+        .hero-section .feature {
+            transition-delay: 0.2s;  /* Delay for features */
+        }
+        
+        .hero-section .cta-container {
+            transition-delay: 0.4s;  /* Delay for CTA button */
+        }
+        
+        .hero-section .hero-testimonial {
+            transition-delay: 0.6s;  /* Delay for testimonial */
+        }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const elementsToAnimate = [
+                    document.querySelector('.hero-section h2'),
+                    document.querySelector('.hero-section p'),
+                    ...document.querySelectorAll('.hero-section .feature'),
+                    document.querySelector('.hero-section .cta-container'),
+                    document.querySelector('.hero-section .hero-testimonial')
+                ];
+        
+                const observerOptions = {
+                    threshold: 0.1  // Trigger when 10% of the item is visible
+                };
+        
+                // Callback function to handle visibility changes
+                const observerCallback = (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');  // Add class when in view
+                        } else {
+                            entry.target.classList.remove('visible');  // Remove class when out of view
+                        }
+                    });
+                };
+        
+                // Create the intersection observer
+                const observer = new IntersectionObserver(observerCallback, observerOptions);
+        
+                // Observe each element to animate
+                elementsToAnimate.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+        
+    
+    
+
+    <section class="achievements-section">
+        <h2 class="main-heading">From Vision to Legendary Success</h2>
+        <div class="achievements-container">
+            <div class="achievement-card main-card">
+                <div class="achievement-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="achievement-info">
+                    <h3>Build Your Dream Home with ANUJ</h3>
+                    <p>Transforming visions into reality with our premium products and exceptional services.</p>
+                </div>
+            </div>
+            <div class="achievements-group">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>30+ Years Of Success</h3>
+                        <p>Celebrating over three decades of excellence in the ceramic industry.</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>No. 1 Brand</h3>
+                        <p>Leading the market with our innovative and high-quality solutions.</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Best Prices</h3>
+                        <p> Direct factory outlet products at affordable prices!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="achievements-group">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Dealers & Distributors</h3>
+                        <p>1,500+ trusted partners expanding our reach across regions.</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Designs</h3>
+                        <p>6,000+ unique designs to match every style and requirement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Keep your existing styles */
+.achievement-card {
+    /* Your existing card styles */
+    opacity: 0;  /* Initially invisible */
+    transform: translateY(30px);  /* Start slightly below */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.achievement-card.visible {
+    opacity: 1;  /* Fade in */
+    transform: translateY(0);  /* Slide into place */
+}
+
+.achievement-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const achievementCards = document.querySelectorAll('.achievement-card');
+    
+            const observerOptions = {
+                threshold: 0.1  // Trigger when 10% of the item is visible
+            };
+    
+            // Callback function to handle visibility changes
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');  // Add class when in view
+                    } else {
+                        entry.target.classList.remove('visible');  // Remove class when out of view
+                    }
+                });
+            };
+    
+            // Create the intersection observer
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+            // Observe each achievement card
+            achievementCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+    
+
+    <main>
+        <section class="about-section">
+            <h2>A LEGACY OF EXCELLENCE</h2>
+            <p>
+                With <strong>over 30+ years of expertise,</strong> Aravind Ceramics Private Ltd., the company behind the <strong> ANUJ Tiles brand,</strong> is synonymous with quality, innovation and customer trust. Headquartered in Chennai, we are proud to be the only <strong> premier vitrified tiles manufacturer in Tamil Nadu,</strong> delivering high-quality products that transform residential and commercial spaces.
+            </p>
+            <p>
+                Our extensive range of over <strong>6,000+ tile designs</strong> seamlessly blends modern and traditional styles, ensuring elegance and functionality in every room. Whether you are creating a home or a commercial project, our tiles add a distinctive touch of beauty and durability.
+            </p>
+            <p>
+                In addition to our impressive tile collections, we offer a full suite of home improvement products, including <strong>sanitary ware, bath fittings and kitchen accessories,</strong> making us a one-stop solution for all design needs.
+            </p>
+            <p>
+                Our dedicated team of experts is here to provide you with the best possible customer experience, from helping you choose the perfect product to delivering it right to your doorstep. With our commitment to excellence, you can rest assured you are getting the best value for your money.
+            </p>
+            <p>
+                Our production capacity of <strong>52,500 sqm/day </strong> reflects our commitment to quality and innovation. With advanced R&D, we continually introduce new products to the market.
+            </p>
+            <p>
+                <strong>As South India’s No.1 Brand,</strong> we stand out for our affordable, high-quality products and commitment to sustainability.
+            </p>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0px;">
+                Our Highlights:
+            </p>
+            <ul style="margin-top: 0px;">
+                <li>South India’s Leading Brand.</li>
+                <li>Only Manufacturer of Vitrified Tiles in Tamil Nadu.</li>
+                <li>30+ Years of Experience and Trust.</li>
+                <li>Largest Showrooms in Tamil Nadu.</li>
+                <li>Direct Factory Outlet Products for Best Prices.</li>
+                <li>6,000+ Unique Designs across a Large Display Area.</li>
+                <li>1,500+ Dealers and Distributors.</li>
+                <li>Our dedicated team of over 1,000+ Professionals.</li>
+            </ul>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0px;">Our Outlets:</p>
+            <p style="margin-top: 0px;">
+                Across <strong>Chennai, Thirunelveli, Oonamalai, Arcot, Erode,  Pattanur, Kumbakonam, Chittoor and more,</strong> supported by a strong network of distributors and dealers across South India, we are well-positioned to serve you better.
+            </p>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0px;">Our Manufacturing Units:</p>
+                <ul style="margin-top: 0px;">
+                    <li><strong style="color: #000000;">Unit - I:</strong> Aravind Ceramic Industries Limited, Kancheepuram.</li>
+                    <li><strong style="color: #000000;">Unit - II:</strong> Aravind Ceramic Industries Limited, Thanjavur.</li>
+                    <li><strong style="color: #000000;">Unit - III:</strong> Regma Ceramics Private Limited, Karaikal.</li>
+                </ul>
+
+            <p>Our units ensure unmatched production capacity and quality control.</p>
+            <p>
+                We invite you to experience the exceptional quality and unique designs of <strong>ANUJ Tiles</strong> and witness why we are <strong>South India's top choice.</strong>
+            </p>
+        </section>
+        
+        
+        
+
+       
+        <div class="video-container">
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/InFy3VWespE?si=ewcuvDQ0OaqGbYTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </main> <hr>
+
+    <center><h2 class="section-heading">IMAGES</h2></center>
+        <section class="tile-gal">
+            <img src="./assets/images/Hero Images/01.jpg" alt="Floor Tile 4" onclick="openFullscreen(this);">
+            <img src="./assets/images/Hero Images/02.jpg" alt="Floor Tile 5" onclick="openFullscreen(this);">
+            <img src="./assets/images/Hero Images/03.jpg" alt="Floor Tile 6" onclick="openFullscreen(this);">
+            <img src="./assets/images/Hero Images/04.jpg" alt="Floor Tile 7" onclick="openFullscreen(this);">
+            <img src="./assets/images/Hero Images/05.jpg" alt="Floor Tile 8" onclick="openFullscreen(this);">
+        </section>
+        
+        <style>
+            .tile-gal {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items */
+    gap: 20px; /* Increased gap between images */
+    margin: 40px 0; /* Top and bottom margin */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.tile-gal img {
+    width: 400px; /* Base image width */
+    height: 250px; /* Base image height */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow for images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation effects */
+    object-fit: cover; /* Ensure images fill the container */
+    border: 2px solid #ffffff; /* White border for contrast */
+}
+
+.tile-gal img:hover {
+    transform: scale(1.1); /* Slightly larger scale on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+    filter: brightness(1.1); /* Slightly brightens the image on hover */
+}
+
+/* Unique overlay effect for text */
+.tile-gal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    color: #ffffff; /* White text color */
+    opacity: 0; /* Initially hidden */
+    display: flex; /* Center text vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease; /* Smooth transition */
+    border-radius: 15px; /* Match border radius of the image */
+}
+
+.tile-gal .know-more-item {
+    position: relative; /* Position relative for overlay */
+    overflow: hidden; /* Hide overflow */
+}
+
+.tile-gal .know-more-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1200px) {
+    .tile-gal {
+        justify-content: center; /* Center items for medium screens */
+    }
+    .tile-gal img {
+        width: calc(30% - 10px); /* Three images per row on larger screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 992px) {
+    .tile-gal {
+        justify-content: center; /* Center items for medium screens */
+    }
+    .tile-gal img {
+        width: calc(45% - 10px); /* Two images per row */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .tile-gal {
+        flex-direction: row; /* Keep images in a row */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+    .tile-gal img {
+        width: calc(50% - 10px); /* Two images per row on tablets */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Space between rows */
+    }
+}
+
+@media (max-width: 480px) {
+    .tile-gal {
+        flex-direction: row; /* Keep images in a row */
+        justify-content: space-between; /* Space between images */
+    }
+    .tile-gal img {
+        width: calc(50% - 10px); /* Two images per row on mobile */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Space between images */
+    }
+}
+
+        </style>
+        
+        
+    </main>
+    
+    <!-- Fullscreen Image Container -->
+    <div class="fullscreen-img" id="fullscreenImg" onclick="closeFullscreen();">
+        <button class="close-btn" onclick="closeFullscreen();">&times;</button>
+        <img id="fullImage" src="" alt="Fullscreen Image">
+    </div>
+    
+    <script>
+        function openFullscreen(imgElement) {
+            const fullscreenImg = document.getElementById('fullscreenImg');
+            const fullImage = document.getElementById('fullImage');
+            fullImage.src = imgElement.src; // Set the source of the full image
+            fullscreenImg.style.display = 'flex'; // Show the fullscreen container
+        }
+    
+        function closeFullscreen() {
+            const fullscreenImg = document.getElementById('fullscreenImg');
+            fullscreenImg.style.display = 'none'; // Hide the fullscreen container
+        }
+    </script>
+    
+    <style>
+        .fullscreen-img {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            top: 0; /* Stay at the top */
+            left: 0; /* Stay at the left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+            justify-content: center; /* Center the image horizontally */
+            align-items: center; /* Center the image vertically */
+            z-index: 1000; /* Sit on top */
+        }
+    
+        .fullscreen-img img {
+            max-width: 90%; /* Responsive image */
+            max-height: 90%; /* Responsive image */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional shadow for better visibility */
+        }
+    
+        .close-btn {
+            position: absolute; /* Position the close button */
+            top: 20px; /* Distance from the top */
+            right: 20px; /* Distance from the right */
+            font-size: 30px; /* Close button size */
+            color: white; /* Close button color */
+            background: none; /* No background */
+            border: none; /* No border */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+    </style>
+
+    
+
+    <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+    <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">PRODUCTS</h2>
+                        <ul class="footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ABOUT US</h2>
+                        <ul class="footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ACTIVITIES</h2>
+                        <ul class="footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">CONTACT</h2>
+                        <ul class="footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+      <!-- Inline CSS for hover effect -->
+      <style>
+        .fab:hover {
+          opacity: 0.7; /* Optional: Reduce opacity on hover */
+        }
+        
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+          footer {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+          }
+  
+          .footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+          }
+  
+          .footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+          }
+  
+          .fab {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+          }
+        }
+  
+        @media (max-width: 480px) {
+          footer {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+          }
+  
+          .footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+          }
+  
+          .footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+          }
+  
+          .fab {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+          }
+        }
+        .footer-list {
+            list-style: none; /* Removes bullets */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+  
+        .footer-list li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
+  
+        .footer-list a {
+            text-decoration: none; /* Removes underline */
+            color: #fff; /* Sets text color */
+            transition: color 0.3s ease; /* Adds smooth transition for color change */
+        }
+  
+        .footer-list a:hover {
+            color: #ffcc00; /* Changes color on hover */
+        }
+  
+      </style>
+    </footer>
+  </div>
+  
+</body>
+</html> 

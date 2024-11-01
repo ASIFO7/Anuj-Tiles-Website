@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>We Are Hiring</title>
+    <link rel="shortcut icon" href="./Anuj Tiles.svg" type="image/svg+xml">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                position: relative; /* Ensure relative positioning for mobile */
+                justify-content: center; /* Center the content */
+            }
+
+            header .logo {
+                position: absolute; /* Position logo absolutely to keep it on the left side */
+                left: 10px; /* Adjust as needed */
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center; /* Keep text centered */
+                margin: 0; /* Remove any extra margin */
+                width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+                transform: translateX(5px); /* Move text further to the right */
+            }
+        }
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            animation: slide-in 1s ease-out; /* Animation for sliding in */
+        }
+
+
+        .back-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            outline: none;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .form-container {
+            background: linear-gradient(135deg, #2c2c2c, #1e1e1e);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            max-width: 800px; /* Added max-width to control the size */
+            margin: 0 auto;  /* Center the form */
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 80%);
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #f9f9f9;
+            font-size: 22px; /* Reduced font size */
+            margin-bottom: 20px; /* Reduced bottom margin */
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px; /* Reduced margin */
+            font-size: 16px; /* Reduced font size */
+            color: #e0e0e0;
+        }
+
+        .form-container input, .form-container select, .form-container textarea {
+            width: 90%;
+            padding: 12px; /* Reduced padding */
+            margin-bottom: 16px; /* Reduced margin */
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px; /* Reduced font size */
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-container input:focus, .form-container select:focus, .form-container textarea:focus {
+            border-color: rgb(255, 0, 0);
+            box-shadow: 0 0 6px rgba(240, 6, 6, 0.6);
+        }
+
+        .form-container input[type="file"] {
+            border: none;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .form-container button {
+            background: linear-gradient(135deg, rgb(255, 0, 0), #e2a0a0);
+            color: #fff;
+            border: none;
+            padding: 14px 28px; /* Reduced padding */
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border-radius: 10px;
+            font-size: 16px; /* Reduced font size */
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-container button:hover {
+            background: linear-gradient(135deg, #e2a0a0, rgb(255, 0, 0));
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; padding: 10px;">
+        <div class="logo" style="position: relative; display: inline-block; margin-right: auto;">
+            <a href="index.html" style="display: block; width: 100%; max-width: 200px;">
+                <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+            </a>
+        </div>
+    </header>
+     <!-- Banner Image -->
+     <img src="./assets/images/Banner/We are Hiring.jpg" alt="Banner Image" class="banner">
+    
+     <main>
+        <div class="form-container">
+            <h2>APPLY FOR A POSITION</h2>
+            <form id="application-form" action="/submit-application" method="post" enctype="multipart/form-data" name="We Are Hiring" data-netlify="true">
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first-name" required pattern="[A-Za-z\s]{2,}" title="First name should only contain letters and spaces, and be at least 2 characters long.">
+                
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last-name" required pattern="[A-Za-z\s]{1,}" title="Last name should only contain letters and spaces, and be at least 1 characters long.">
+                
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="9876543210" required>  
+                
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="education">Education *</label>
+                <select id="education" name="education" required>
+                    <option value="" disabled selected>Choose Your Education</option>
+                    <option value="high-school">High School</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Arts and Science">Arts and Science</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">PhD</option>
+                </select>
+                
+                <label for="employment-status">What Is Your Current Employment Status: *</label>
+                <select id="employment-status" name="employment-status" required>
+                    <option value="" disabled selected>Choose Your Employment Status</option>
+                    <option value="employed">Employed (Experienced)</option>
+                    <option value="self-employed">Self-Employed</option>  
+                    <option value="unemployed">Un-Employed</option>
+                    <option value="student">Student (Fresher)</option>
+                </select>
+                
+                <label for="resume">Upload Your Resume: * <h6>(150KB or less)</h6> </label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+                
+                <center><button type="submit" value="SUBMIT">Submit</button></center>
+            </form>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('application-form').addEventListener('submit', function(event) {
+                const resumeInput = document.getElementById('resume');
+                const file = resumeInput.files[0];
+    
+                // Check if a file is selected
+                if (file) {
+                    const fileSize = file.size; // Size in bytes
+    
+                    // Convert 150KB to bytes (150 * 1024)
+                    if (fileSize > 150 * 1024) {
+                        event.preventDefault(); // Prevent form submission
+                        alert('File size must be 150KB or less. Please upload a smaller file.');
+                        resumeInput.value = ''; // Clear the input
+                    }
+    
+                    // Check file type
+                    const allowedExtensions = /(\.pdf|\.doc|\.docx)$/i;
+                    if (!allowedExtensions.exec(file.name)) {
+                        event.preventDefault(); // Prevent form submission
+                        alert('Please upload a valid PDF or Word document.');
+                        resumeInput.value = ''; // Clear the input
+                    }
+                } else {
+                    alert('Please select a file to upload.');
+                }
+            });
+        });
+    </script>
+    
+
+    <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+    <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">PRODUCTS</h2>
+                        <ul class="footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ABOUT US</h2>
+                        <ul class="footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ACTIVITIES</h2>
+                        <ul class="footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">CONTACT</h2>
+                        <ul class="footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+      <!-- Inline CSS for hover effect -->
+      <style>
+        .fab:hover {
+          opacity: 0.7; /* Optional: Reduce opacity on hover */
+        }
+        
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+          footer {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+          }
+  
+          .footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+          }
+  
+          .footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+          }
+  
+          .fab {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+          }
+        }
+  
+        @media (max-width: 480px) {
+          footer {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+          }
+  
+          .footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+          }
+  
+          .footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+          }
+  
+          .fab {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+          }
+        }
+        .footer-list {
+            list-style: none; /* Removes bullets */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+  
+        .footer-list li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
+  
+        .footer-list a {
+            text-decoration: none; /* Removes underline */
+            color: #fff; /* Sets text color */
+            transition: color 0.3s ease; /* Adds smooth transition for color change */
+        }
+  
+        .footer-list a:hover {
+            color: #ffcc00; /* Changes color on hover */
+        }
+  
+      </style>
+    </footer>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branches and Showrooms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="./Anuj Tiles.svg" type="image/svg+xml">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #004085;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+            margin: 0 0 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+            border-bottom: 2px solid #363636;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .grid-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .grid-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .address {
+            font-size: 16px;
+            color: #555;
+            padding: 10px;
+            line-height: 1.5;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                position: relative; /* Ensure relative positioning for mobile */
+                justify-content: center; /* Center the content */
+            }
+
+            header .logo {
+                position: absolute; /* Position logo absolutely to keep it on the left side */
+                left: 10px; /* Adjust as needed */
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center; /* Keep text centered */
+                margin: 0; /* Remove any extra margin */
+                width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+                transform: translateX(20px); /* Move text further to the right */
+            }
+        }
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            animation: slide-in 1s ease-out; /* Animation for sliding in */
+        }
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; padding: 10px;">
+        <div class="logo" style="position: relative; display: inline-block; margin-right: auto;">
+            <a href="index.html" style="display: block; width: 100%; max-width: 200px;">
+                <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+            </a>
+        </div>
+    </header>
+
+    <!-- Banner Image -->
+    <img src="./assets/images/1. Niagara Main/New-Showroom.png" alt="Banner Image" class="banner">
+
+    <main>
+        <!-- Section: Anuj Tiles Overview -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Anuj Tiles</h2>
+                <p>Welcome to Anuj Tiles, your trusted destination for premium products. We are committed to offering the highest quality products at our various locations across South India. Explore our branches, factories and warehouses below.</p>
+            </div>
+        </section>
+
+        <!-- Section: Branches -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Our Branches</h2>
+                <p>We have branches in key cities to serve you better. Click on any location to find us on Google Maps.</p>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/4rjgMWpMyPrqp9NR9" target="_blank">
+                        <img src="./assets/images/chennai.jpg" alt="Branch 1">
+                        <div class="overlay">Chennai</div>
+                    </a>
+                    <div class="address"><strong>Chennai</strong> <br>65-A, Kundrathur Main Rd, Porur, Chennai,<br>
+
+                        Tamil Nadu 600116,<br> Ph: 95516 98878</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/VGNiFQgHxX6xcHG29" target="_blank">
+                        <img src="./assets/images/pondicherry.png" alt="Branch 2">
+                        <div class="overlay">Pondicherry</div>
+                    </a>
+                    <div class="address"><strong>Pondicherry</strong> <br>No-4/154, Pondy – Tindivanam Main Road Auroville Post Vanur, Pattanur, Vilupuram, <br> Tamil Nadu – 605101 <br>
+
+                        Ph: 7401837241</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/Sa7brvqcGeKuMSET6" target="_blank">
+                        <img src="./assets/images/erode.jpg" alt="Branch 3">
+                        <div class="overlay">Erode</div>
+                    </a>
+                    <div class="address"><strong>Erode</strong> <br>No-210, Erode to Perundurai Road, Vannakattuvalasu,
+
+                        Kathirampatti, Erode, <br> Tamil Nadu-638107 <br>
+                        
+                        Ph: 7299942323</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/yYRnfMaWAryBB7788" target="_blank">
+                        <img src="./assets/images/arcot.jpg" alt="Branch 4">
+                        <div class="overlay">Arcot</div>
+                    </a>
+                    <div class="address"><strong>Arcot</strong> <br>Survey No-53/2B2B1 & 53/2B2A,
+
+                        Arcot Bypass,Veppur,
+                        
+                        Ranipet,<br> Tamil Nadu – 632509. <br>
+                        
+                        Ph: 9841414561</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/8kELu6B4ZgHMfj9N8" target="_blank">
+                        <img src="./assets/images/Tirunelveli Loc.jpg" alt="Branch 4">
+                        <div class="overlay">Tirunelveli</div>
+                    </a>
+                    <div class="address"><strong>Tirunelveli</strong> <br>
+                        NP 210 Madurai Road, Shankar Nagar, <br>
+                        Tirunelveli - 627357. <br>
+                        Ph: 9841300822.</div>
+                </div>
+            </div>
+        </section>
+        <style></style>
+
+        <!-- Section: Factories -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Our Factories</h2>
+                <p>Our factories are equipped with the latest technology to produce the finest tiles. Click on the images below to view our factory locations on Google Maps.</p>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/kVywFp1sB6Ho94Py9" target="_blank">
+                        <img src="./assets/images/KANCHEEPURAM.jpg" alt="Factory 1">
+                        <div class="overlay">Kancheepuram</div>
+                    </a>
+                    <div class="address"><strong>Kancheepuram</strong> <br>Aravind Ceramic Industries Limited, <br>
+                        Rettamangalam Village, Uthiramerur Taluka, <br>
+                        Kancheepuram, Tamil Nadu 603107.</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/W41Gtpk4WK6uqc8n7" target="_blank">
+                        <img src="./assets/images/KARAIKAL.jpg" alt="Factory 2">
+                        <div class="overlay">Karaikal</div>
+                    </a>
+                    <div class="address"><strong>Karaikal</strong> <br>Regma Ceramics Pvt Ltd,<br>
+
+                        Agalangannu Road, Sellur Village,<br>
+                        
+                        Thirunallur Commune,Karaikal,<br>
+                        
+                        Puducherry-609602</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/YDW6Ydsbm4oCQMKG8" target="_blank">
+                        <img src="./assets/images/THANJAVUR.jpg" alt="Factory 3">
+                        <div class="overlay">Thanjavur</div>
+                    </a>
+                    <div class="address"><strong>Thanjavur</strong> <br>Aravind Ceramic Industries Limited Unit – 2 <br>
+                        Survey Number : 91- 98, Papanasam main road,<br>
+                        Saliyamangalam village, Thanjavur. <br>
+                        Pin code – 613504</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Warehouses -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Our Warehouses</h2>
+                <p>Our warehouses are strategically located to ensure timely delivery of products. Click on the images below to find the nearest warehouse.</p>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/TEo1Nh8kJV5Wydu26" target="_blank">
+                        <img src="./assets/images/OONAMALAI.jpg" alt="Warehouse 1">
+                        <div class="overlay">Oonamalai</div>
+                    </a>
+                    <div class="address"><strong>Oonamalai</strong> <br>No.1/18, G.S.T Road, Oonamalai, <br>
+                        Madhuranthagam Taluk-603306. <br>
+                        Ph: 9841722225</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/ZtNVLt8NMwgKBJp38" target="_blank">
+                        <img src="./assets/images/CHITTOOR.jpg" alt="Warehouse 2">
+                        <div class="overlay">Chittoor</div>
+                    </a>
+                    <div class="address"><strong>Chittoor</strong> <br>D.NO: 22 - 977/CD, Revenue Ward No:22, <br>
+                        Muraganpalli , Chittor-517001. <br>
+                        
+                        Ph: 9597100706</div>
+                </div>
+                <div class="grid-item">
+                    <a href="https://maps.app.goo.gl/85H6DbjXuFVGcrD88" target="_blank">
+                        <img src="./assets/images/TIRUNELVELI.jpg" alt="Warehouse 3">
+                        <div class="overlay">Tirunelveli</div>
+                    </a>
+                    <div class="address"><strong>Tirunelveli</strong> <br>Aravind Ceramics Pvt Ltd, <br>
+                        NP 210 Madurai Road, Shankar Nagar, <br>
+                        Tirunelveli - 627357. <br>
+                        Ph: 9841300822.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+    <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">PRODUCTS</h2>
+                        <ul class="footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ABOUT US</h2>
+                        <ul class="footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ACTIVITIES</h2>
+                        <ul class="footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">CONTACT</h2>
+                        <ul class="footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+      <!-- Inline CSS for hover effect -->
+      <style>
+        .fab:hover {
+          opacity: 0.7; /* Optional: Reduce opacity on hover */
+        }
+        
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+          footer {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+          }
+  
+          .footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+          }
+  
+          .footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+          }
+  
+          .fab {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+          }
+        }
+  
+        @media (max-width: 480px) {
+          footer {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+          }
+  
+          .footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+          }
+  
+          .footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+          }
+  
+          .fab {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+          }
+        }
+        .footer-list {
+            list-style: none; /* Removes bullets */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+  
+        .footer-list li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
+  
+        .footer-list a {
+            text-decoration: none; /* Removes underline */
+            color: #fff; /* Sets text color */
+            transition: color 0.3s ease; /* Adds smooth transition for color change */
+        }
+  
+        .footer-list a:hover {
+            color: #ffcc00; /* Changes color on hover */
+        }
+  
+      </style>
+    </footer>
+  </div>
+</body>
+</html>

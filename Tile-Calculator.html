@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiles Calculator</title>
+    <link rel="shortcut icon" href="/Anuj Tiles.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e2e2e2 0%, #ffffff 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        legend {
+            font-size: 18px;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #db3434;
+            padding-bottom: 10px;
+        }
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        select, input[type="number"] {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        select:focus, input[type="number"]:focus {
+            border-color: #db3434;
+            outline: none;
+        }
+        button {
+            background-color: #db3434;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #b92929;
+            transform: scale(1.02);
+        }
+        button:active {
+            background-color: #9e1f1f;
+            transform: scale(0.98);
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 6px;
+            background-color: #ecf0f1;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+        .result p {
+            margin: 10px 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                position: relative; /* Ensure relative positioning for mobile */
+                justify-content: center; /* Center the content */
+            }
+
+            header .logo {
+                position: absolute; /* Position logo absolutely to keep it on the left side */
+                left: 10px; /* Adjust as needed */
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center; /* Keep text centered */
+                margin: 0; /* Remove any extra margin */
+                width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+                transform: translateX(5px); /* Move text further to the right */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" style="position: relative; display: inline-block;">
+          <a href="index.html" style="display: block; width: 100%;">
+              <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+          </a>
+      </div>
+          <h1 style="color: white;">Tiles Calculator</h1>
+          
+      </header>
+      <div class="container">
+        <h1>Tiles Calculator</h1>
+        <form id="tiles-form">
+            <fieldset>
+                <legend>Tile Size</legend>
+                <label for="tileSize">Select Tile Size:</label>
+                <select id="tileSize" required>
+                    <option value="300x300">300 x 300 mm</option>
+                    <option value="375x250">375 x 250 mm</option>
+                    <option value="395x395">395 x 395 mm</option>
+                    <option value="450x300">450 x 300 mm</option>
+                    <option value="600x250">600 x 250 mm</option>
+                    <option value="600x300">600 x 300 mm</option>
+                    <option value="600x600">600 x 600 mm</option>
+                    <option value="800x800">800 x 800 mm</option>
+                    <option value="900x300">900 x 300 mm</option>
+                    <option value="1200x200">1200 x 200 mm</option>
+                    <option value="1200x300">1200 x 300 mm</option>
+                    <option value="1200x600">1200 x 600 mm</option>
+                    <option value="1600x800">1600 x 800 mm</option>
+                    <option value="1600x1200">1600 x 1200 mm</option>
+                    <option value="1800x1200">1800 x 1200 mm</option>
+                    <option value="2400x800">2400 x 800 mm</option>
+                    <option value="2400x1200">2400 x 1200 mm</option>
+                    <option value="3000x800">3000 x 800 mm</option>
+                </select>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Area to Cover</legend>
+                <label for="areaLength">Length (feet):</label>
+                <input type="number" id="areaLength" step="0.01" required>
+                
+                <label for="areaWidth">Width (feet):</label>
+                <input type="number" id="areaWidth" step="0.01" required>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Box Size</legend>
+                <label for="tilesPerBox">Tiles per Box:</label>
+                <input type="number" id="tilesPerBox" step="1" value="4" required>
+            </fieldset>
+    
+            <button type="button" onclick="calculateTiles()">Calculate</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    
+    <script>
+    function calculateTiles() {
+        const tileSize = document.getElementById('tileSize').value.split('x');
+        const tileLengthMM = parseFloat(tileSize[0]);
+        const tileWidthMM = parseFloat(tileSize[1]);
+        const areaLengthFeet = parseFloat(document.getElementById('areaLength').value);
+        const areaWidthFeet = parseFloat(document.getElementById('areaWidth').value);
+        const tilesPerBox = parseInt(document.getElementById('tilesPerBox').value, 10);
+    
+        // Convert tile dimensions from mm to inches
+        const tileLengthInches = tileLengthMM / 25.4;
+        const tileWidthInches = tileWidthMM / 25.4;
+    
+        // Calculate the area of the tile in square feet
+        const tileAreaSqFt = (tileLengthInches * tileWidthInches) / 144; // converting to square feet
+    
+        // Calculate the room area in square feet
+        const roomAreaSqFt = areaLengthFeet * areaWidthFeet;
+    
+        // Calculate the number of tiles required
+        const numberOfTiles = Math.ceil(roomAreaSqFt / tileAreaSqFt);
+    
+        // Calculate the number of boxes needed
+        const numberOfBoxes = Math.ceil(numberOfTiles / tilesPerBox);
+    
+        // Display results
+        document.getElementById('result').innerHTML = `
+            <p><strong>Area to Cover:</strong> ${roomAreaSqFt.toFixed(2)} square feet</p>
+            <p><strong>Tile Size:</strong> ${tileLengthMM} x ${tileWidthMM} mm</p>
+            <p><strong>Required Tiles:</strong> ${numberOfTiles}</p>
+            <p><strong>Required Boxes:</strong> ${numberOfBoxes}</p>
+            <br>
+            <p><em>This may vary based on your actual need. This is only an approximate calculation !!!</em></p>
+        `;
+    }
+    </script>
+    
+      <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+    <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">PRODUCTS</h2>
+                        <ul class="footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ABOUT US</h2>
+                        <ul class="footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ACTIVITIES</h2>
+                        <ul class="footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">CONTACT</h2>
+                        <ul class="footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+      <!-- Inline CSS for hover effect -->
+      <style>
+        .fab:hover {
+          opacity: 0.7; /* Optional: Reduce opacity on hover */
+        }
+        
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+          footer {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+          }
+  
+          .footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+          }
+  
+          .footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+          }
+  
+          .fab {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+          }
+        }
+  
+        @media (max-width: 480px) {
+          footer {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+          }
+  
+          .footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+          }
+  
+          .footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+          }
+  
+          .fab {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+          }
+        }
+        .footer-list {
+            list-style: none; /* Removes bullets */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+  
+        .footer-list li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
+  
+        .footer-list a {
+            text-decoration: none; /* Removes underline */
+            color: #fff; /* Sets text color */
+            transition: color 0.3s ease; /* Adds smooth transition for color change */
+        }
+  
+        .footer-list a:hover {
+            color: #ffcc00; /* Changes color on hover */
+        }
+  
+      </style>
+    </footer>
+  </div>
+</body>
+</html>

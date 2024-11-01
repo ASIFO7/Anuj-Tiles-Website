@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/Anuj Tiles.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+      :root {
+        --primary-color: #cc3a30;
+        --secondary-color: #e8e8e8;
+        --text-dark: #0f172a;
+        --text-light: #292929;
+        --white: #ffffff;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--secondary-color);
+      }
+
+      .section__container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .section__container h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .section__container h1 {
+        position: relative;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .section__container h1::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 5rem;
+        background-color: var(--primary-color);
+      }
+
+      .section__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .section__card {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: 5rem 2rem 2rem;
+        background-color: var(--white);
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .section__card::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        background-color: var(--primary-color);
+        z-index: -1;
+        transition: 0.5s;
+      }
+
+      .section__card span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        font-size: 3rem;
+        color: var(--white);
+      }
+
+      .section__card h4 {
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        transition: 0.3s;
+      }
+
+      .section__card p {
+        margin-bottom: 2rem;
+        color: var(--text-light);
+        transition: 0.3s;
+      }
+
+      .section__card img {
+        margin-bottom: 1rem;
+        width: 120px; /* Increased width */
+        height: 120px; /* Square shape */
+        border-radius: 8px; /* Rounded corners */
+        border: 2px solid var(--primary-color);
+        transition: 0.3s;
+      }
+
+      .section__card h5 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        transition: 0.3s;
+      }
+
+      .section__card h6 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text-light);
+        transition: 0.3s;
+      }
+
+      .section__card:hover::before {
+        width: 400%;
+      }
+
+      .section__card:hover :is(h4, h5) {
+        color: var(--white);
+      }
+
+      .section__card:hover :is(p, h6) {
+        color: var(--secondary-color);
+      }
+
+      .section__card:hover img {
+        border-color: var(--white);
+      }
+
+      header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+       
+
+      
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+            .back-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header h1 {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            .back-button {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                font-size: 14px;
+            }
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+    </style>
+    <title>Awards</title>
+  </head>
+  <body>
+    <header style="display: flex; align-items: center; padding: 10px;">
+      <div class="logo" style="position: relative; display: inline-block; margin-right: auto;">
+          <a href="index.html" style="display: block; width: 100%; max-width: 200px;">
+              <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+          </a>
+      </div>
+  </header>
+    <img src="./assets/images/1. Niagara Main/New-Awards.png" alt="Niagara Banner" class="banner">
+  
+
+  <!-- Awards Section -->
+  <section class="awards-container">
+    <h2 class="awards-header" style="color: rgb(212, 30, 30);">Distinguished Achievements</h2>
+    <h1 class="awards-subheader" style="color: black;">Pioneers in Ceramic Industry</h1>
+
+    <div class="awards-content">
+      <p style="color: black; background-color: #fff0f0; padding: 10px; border-left: 4px solid #d11919; border-radius: 4px;">
+        Aravind Ceramics holds ISO 9001-2000 certification from "TUV NORD", Germany, signifying its commitment to excellence in Quality Management Systems.
+      </p>
+      
+
+      <p style="color: black;">Our dedication to quality and excellence has been recognized through numerous prestigious awards:</p>
+      <ul class="awards-list">
+        <li>KSPC Productivity Award (1983, 1989)</li>
+        <li>Indian Institute of Materials Management's 2nd prize in store management competition</li>
+        <li>National Institute of Quality and Reliability (1991)</li>
+        <li>KSIDC Award for excellence in Kerala Chapter (1999)</li>
+        <li>National Safety Council of India's Industry Safety Awards (2003, 2004)</li>
+      </ul>
+
+      <h2 class="certifications-header">Prestigious Institutional Certifications</h2>
+      <p style="color: black;">Our products are certified by esteemed institutions, including:</p>
+      <ul class="certifications-list">
+        <li>Delhi Test House, Delhi</li>
+        <li>CEPT R&D, Ahmedabad</li>
+        <li>Benchmark Certification</li>
+        <li>Public Works Department, Tamil Nadu</li>
+        <li>CPWD</li>
+        <li>Bureau of Indian Standards</li>
+        <li>Tamil Nadu Housing Board</li>
+        <li>Tamil Nadu Police Housing Corporation</li>
+      </ul>
+    </div>
+  </section>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #000000;
+    }
+
+    .brand-logo {
+      margin: 20px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 10px;
+      color: #000000;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .awards-container {
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #f9f9f9 0%, #e0e0e0 100%);
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      max-width: 1200px;
+    }
+
+    .awards-header {
+      font-size: 32px;
+      text-align: center;
+      color: #616161;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .awards-subheader {
+      font-size: 24px;
+      text-align: center;
+      color: #000000;
+      margin-bottom: 40px;
+    }
+
+    .awards-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .awards-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #030303;
+    }
+
+    .awards-list,
+    .certifications-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .awards-list li,
+    .certifications-list li {
+      font-size: 18px;
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 25px;
+      color: #000000;
+      font-weight: 500;
+    }
+
+    .awards-list li::before,
+    .certifications-list li::before {
+      content: '\f058'; /* FontAwesome check icon */
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #bd2424;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 14px;
+    }
+
+    .certifications-header {
+      font-size: 28px;
+      color:  rgb(212, 30, 30);
+      margin-top: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .certifications-list li {
+      font-size: 18px;
+      color: #000000;
+    }
+
+    .certifications-list li::before {
+      color: #bd2424;
+    }
+
+    /* Add hover effects */
+    .awards-list li:hover,
+    .certifications-list li:hover {
+      transform: translateX(5px);
+      transition: 0.3s ease;
+      color: #222;
+    }
+
+    .awards-container h2, 
+    .awards-container p, 
+    .awards-container ul {
+      animation: fadeInUp 0.5s ease-in-out both;
+    }
+
+    /* Cool animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+
+
+  <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+  <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+          <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">PRODUCTS</h2>
+                      <ul class="footer-list">
+                          <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                          <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                          <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                          <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                          <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                      </ul>
+                  </div>
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">ABOUT US</h2>
+                      <ul class="footer-list">
+                          <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                          <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                          <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                          <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                      </ul>
+                  </div>
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">ACTIVITIES</h2>
+                      <ul class="footer-list">
+                          <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                          <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                          <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                      </ul>
+                  </div>
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">CONTACT</h2>
+                      <ul class="footer-list">
+                          <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                          <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <!-- Social Media Icons using Font Awesome -->
+              <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                  <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                  </a>
+                  <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                  </a>
+                  <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                  </a>
+                  <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                  </a>
+                  <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                  </a>
+              </div>
+          </div>
+          <!-- Copyright Notice -->
+          <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+              <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+          </div>
+      </div>
+  </footer>
+</div>
+
+
+    <!-- Inline CSS for hover effect -->
+    <style>
+      .fab:hover {
+        opacity: 0.7; /* Optional: Reduce opacity on hover */
+      }
+      
+      /* Media Queries for responsive design */
+      @media (max-width: 768px) {
+        footer {
+          padding: 20px 0; /* Adjust padding for smaller screens */
+        }
+
+        .footer-heading {
+          font-size: 18px; /* Adjust font size for smaller screens */
+        }
+
+        .footer-list li {
+          margin-bottom: 8px; /* Adjust spacing for smaller screens */
+        }
+
+        .footer-list a {
+          font-size: 14px; /* Adjust font size for smaller screens */
+        }
+
+        .fab {
+          font-size: 20px; /* Adjust icon size for smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        footer {
+          padding: 15px 0; /* Further adjust padding for very small screens */
+        }
+
+        .footer-heading {
+          font-size: 16px; /* Further adjust font size for very small screens */
+        }
+
+        .footer-list li {
+          margin-bottom: 6px; /* Further adjust spacing for very small screens */
+        }
+
+        .footer-list a {
+          font-size: 12px; /* Further adjust font size for very small screens */
+        }
+
+        .fab {
+          font-size: 16px; /* Further adjust icon size for very small screens */
+        }
+      }
+      .footer-list {
+          list-style: none; /* Removes bullets */
+          padding: 0; /* Removes default padding */
+          margin: 0; /* Removes default margin */
+      }
+
+      .footer-list li {
+          margin-bottom: 10px; /* Adds space between list items */
+      }
+
+      .footer-list a {
+          text-decoration: none; /* Removes underline */
+          color: #fff; /* Sets text color */
+          transition: color 0.3s ease; /* Adds smooth transition for color change */
+      }
+
+      .footer-list a:hover {
+          color: #ffcc00; /* Changes color on hover */
+      }
+
+    </style>
+  </footer>
+</div>
+  </body>
+</html>

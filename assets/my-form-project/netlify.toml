@@ -1,0 +1,12 @@
+[build]
+  # This is the folder where Netlify will look for your static files
+  publish = "public"
+
+[dev]
+  # This specifies the folder where your functions are located
+  functions = "netlify/functions"
+
+  # This sets up a local development server for your Express app
+  # Replace with the actual path if your server file is named differently
+  command = "node server.js"
+  port = 3000

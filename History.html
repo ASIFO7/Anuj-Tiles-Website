@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | Aravind Ceramics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="/Anuj Tiles.svg" type="image/svg+xml">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                position: relative; /* Ensure relative positioning for mobile */
+                justify-content: center; /* Center the content */
+            }
+
+            header .logo {
+                position: absolute; /* Position logo absolutely to keep it on the left side */
+                left: 10px; /* Adjust as needed */
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center; /* Keep text centered */
+                margin: 0; /* Remove any extra margin */
+                width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+                transform: translateX(50px); /* Move text further to the right */
+            }
+        }
+
+        .back-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .back-button:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 5%;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #be1f1f;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-item {
+            padding: 20px 30px;
+            position: relative;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #c92424;
+            border-radius: 50%;
+            left: 50%;
+            margin-left: -10px;
+            top: 10px;
+            z-index: 1;
+        }
+        .timeline-item .icon {
+            font-size: 30px;
+            color: #be2020;
+            margin-right: 20px;
+        }
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #1d0303;
+        }
+        .timeline-item p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .timeline-item span {
+            display: block;
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+            .back-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header h1 {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            .back-button {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                font-size: 14px;
+            }
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .timeline-item .icon {
+                margin-bottom: 10px;
+            }
+        }
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; padding: 10px;">
+        <div class="logo" style="position: relative; display: inline-block; margin-right: auto;">
+            <a href="index.html" style="display: block; width: 100%; max-width: 200px;">
+                <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+            </a>
+        </div>
+    </header>
+    
+    
+
+    <img src="./assets/images/Banner/History banner Center.jpg" alt="Healthware Banner" class="banner">
+
+    <main>
+        <section class="timeline">
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <i class="fas fa-calendar-day icon"></i>
+                    <div class="timeline-content">
+                        <h3>1996 - Founding</h3>
+                        <p>Founded as a partnership firm specializing in the trading of tiles and sanitary ware.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-trophy icon"></i>
+                    <div class="timeline-content">
+                        <h3>1996-2000 - Early Growth</h3>
+                        <p>Achieved steady growth, establishing a strong reputation as a reliable supplier in the market.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-star icon"></i>
+                    <div class="timeline-content">
+                        <h3>2001 - Market Leadership</h3>
+                        <p>Attained a leadership position in dealer sales across Tamil Nadu.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-building icon"></i>
+                    <div class="timeline-content">
+                        <h3>2006 - Corporate Expansion</h3>
+                        <ul>
+                            <li>Expanded operations by establishing Aravind Ceramic Industries Limited (ACIL), marking the entry into manufacturing, with Uthiramerur, Kanchipuram serving as ACIL Unit 1.</li>
+                            <li>Launched the Anuj Tiles brand, further diversifying the product portfolio.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-industry icon"></i>
+                    <div class="timeline-content">
+                        <h3>2008 - Manufacturing Initiation</h3>
+                        <p>Commenced manufacturing operations, becoming the first tile manufacturer in Tamil Nadu with an initial capacity of 6,000 sqm/day.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-cogs icon"></i>
+                    <div class="timeline-content">
+                        <h3>2012 - Corporate Restructuring</h3>
+                        <p>Underwent corporate restructuring, forming Aravind Ceramics Private Ltd (ACPL).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-newspaper icon"></i>
+                    <div class="timeline-content">
+                        <h3>2013 - Product Diversification</h3>
+                        <p>Introduced parking tiles as part of product diversification and expanded production capacity to 4,500 sqm/day.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-newspaper icon"></i>
+                    <div class="timeline-content">
+                        <h3>2015 - Technological Advancement</h3>
+                        <ul>
+                            <li>Integrated digital printing technology, elevating product design and quality. Expanded capacity further with a third production line to 10,000 sqm/day.</li>
+                            <li>Launched PGVT/GVT (Polished Glazed Vitrified Tiles).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-print icon"></i>
+                    <div class="timeline-content">
+                        <h3>2016 - Digital Innovation</h3>
+                        <p>Continued to lead in innovation by introducing digital parking tiles.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-thermometer-half icon"></i>
+                    <div class="timeline-content">
+                        <h3>2017 - Market Dominance</h3>
+                        <ul>
+                            <li>Solidified market dominance, becoming the sole tile manufacturer in Tamil Nadu.</li>
+                            <li>Broadened product range with the addition of Cool Roof tiles.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-box icon"></i>
+                    <div class="timeline-content">
+                        <h3>2020 - Product Expansion</h3>
+                        <p>Expanded the product range, launching manhole covers, sink and kitchen slab tiles, SHG and HG tiles.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-handshake icon"></i>
+                    <div class="timeline-content">
+                        <h3>2021 - Acquisition</h3>
+                        <p>Acquired Regma Ceramics Pvt. Limited, increasing manufacturing capacity by an additional 12,000 sqm/day; Regma Ceramics serves as ACIL Unit 3.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <div class="timeline-content">
+                        <h3>2022 - Corporate Growth</h3>
+                        <p>Established the corporate office in Porur, a procurement office in Morbi, showrooms throughout Tamil Nadu and distributors across South India.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-industry icon"></i>
+                    <div class="timeline-content">
+                        <h3>2023 - New Facility</h3>
+                        <ul>
+                            <li>Established a new manufacturing facility ACIL Unit 2 in Thanjavur, with a production capacity of 20,000 sqm/day.</li>
+                            <li>Total production capacity now stands at 52,500 sqm/day, reflecting ongoing growth and commitment to innovation.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-chart-line icon"></i>
+                    <div class="timeline-content">
+                        <h3>2024 - Present</h3>
+                        <p>We are well-represented across South India to serve you better, striving to meet your needs and continuing to grow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(50px) scale(0.9) rotateX(10deg); /* Start with offset, scale, and slight rotation */
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+            transition-delay: 0.1s; /* Slight delay for each item */
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0deg); /* Animate back to normal scale, no rotation */
+        }
+        
+        .timeline-item:nth-child(2n) {
+            transform: translateY(50px) scale(0.9) rotateY(10deg); /* Alternate rotation for every second item */
+        }
+        
+        .timeline-item.visible:nth-child(2n) {
+            transform: translateY(0) scale(1) rotateY(0deg);
+        }
+        
+        
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const timelineItems = document.querySelectorAll('.timeline-item');
+        
+                const observerOptions = {
+                    threshold: 0.1 // Trigger when 10% of the item is visible
+                };
+        
+                // Callback function to handle visibility changes
+                const observerCallback = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        } else {
+                            entry.target.classList.remove('visible');
+                        }
+                    });
+                };
+        
+                // Create the intersection observer
+                const observer = new IntersectionObserver(observerCallback, observerOptions);
+        
+                // Observe each timeline item
+                timelineItems.forEach(item => {
+                    observer.observe(item);
+                });
+            });
+        </script>
+        
+        
+        
+        
+        
+    </main>
+   <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+    <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">PRODUCTS</h2>
+                        <ul class="footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ABOUT US</h2>
+                        <ul class="footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ACTIVITIES</h2>
+                        <ul class="footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">CONTACT</h2>
+                        <ul class="footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+      <!-- Inline CSS for hover effect -->
+      <style>
+        .fab:hover {
+          opacity: 0.7; /* Optional: Reduce opacity on hover */
+        }
+        
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+          footer {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+          }
+  
+          .footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+          }
+  
+          .footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+          }
+  
+          .fab {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+          }
+        }
+  
+        @media (max-width: 480px) {
+          footer {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+          }
+  
+          .footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+          }
+  
+          .footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+          }
+  
+          .fab {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+          }
+        }
+        .footer-list {
+            list-style: none; /* Removes bullets */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+  
+        .footer-list li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
+  
+        .footer-list a {
+            text-decoration: none; /* Removes underline */
+            color: #fff; /* Sets text color */
+            transition: color 0.3s ease; /* Adds smooth transition for color change */
+        }
+  
+        .footer-list a:hover {
+            color: #ffcc00; /* Changes color on hover */
+        }
+  
+      </style>
+    </footer>
+  </div>
+  
+</body>
+</html>

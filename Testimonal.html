@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/Anuj Tiles.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+      :root {
+        --primary-color: #cc3a30;
+        --secondary-color: #e8e8e8;
+        --text-dark: #0f172a;
+        --text-light: #292929;
+        --white: #ffffff;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--secondary-color);
+      }
+
+      .section__container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .section__container h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .section__container h1 {
+        position: relative;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .section__container h1::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 5rem;
+        background-color: var(--primary-color);
+      }
+
+      .section__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .section__card {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: 5rem 2rem 2rem;
+        background-color: var(--white);
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .section__card::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 55%;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        background-color: var(--primary-color);
+        z-index: -1;
+        transition: 0.5s;
+      }
+
+      .section__card span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        font-size: 3rem;
+        color: var(--white);
+      }
+
+      .section__card h4 {
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        transition: 0.3s;
+      }
+
+      .section__card p {
+        margin-bottom: 2rem;
+        color: var(--text-light);
+        transition: 0.3s;
+      }
+
+      .section__card img {
+        margin-bottom: 1rem;
+        max-width: 100px;
+        border-radius: 100%;
+        border: 2px solid var(--primary-color);
+        transition: 0.3s;
+      }
+
+      .section__card h5 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        transition: 0.3s;
+      }
+
+      .section__card h6 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text-light);
+        transition: 0.3s;
+      }
+
+      .section__card:hover::before {
+        width: 400%;
+      }
+
+      .section__card:hover :is(h4, h5) {
+        color: var(--white);
+      }
+
+      .section__card:hover :is(p, h6) {
+        color: var(--secondary-color);
+      }
+
+      .section__card:hover img {
+        border-color: var(--white);
+      }
+      header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the header text */
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        header .logo {
+            position: absolute; /* Position logo absolutely to keep it on the left side */
+            left: 20px; /* Adjust as needed */
+        }
+
+        header .logo img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            flex: 1; /* Allows header text to expand and center itself */
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 2%;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 2%;
+                position: relative; /* Ensure relative positioning for mobile */
+                justify-content: center; /* Center the content */
+            }
+
+            header .logo {
+                position: absolute; /* Position logo absolutely to keep it on the left side */
+                left: 10px; /* Adjust as needed */
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center; /* Keep text centered */
+                margin: 0; /* Remove any extra margin */
+                width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+                transform: translateX(5px); /* Move text further to the right */
+            }
+        }
+
+        @media (max-width: 768px) {
+  .section__grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .section__grid {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    gap: 1rem; /* Adjust gap between items */
+  }
+
+  .section__card {
+    padding: 1.5rem; /* Adjust padding for mobile screens */
+    margin: 0 auto; /* Center cards if necessary */
+  }
+
+  .section__card img {
+    width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Adjust border radius for consistency */
+  }
+}
+
+    </style>
+    <title>Feedback</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo" style="position: relative; display: inline-block;">
+        <a href="index.html" style="display: block; width: 100%;">
+            <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+        </a>
+    </div>
+        <h1 style="color: white;">Feedback</h1>
+        
+    </header>
+
+    <!-- <img src="./assets/images/Banner/blog_1.jpg" alt="Healthware Banner" class="banner"> -->
+    <!-- Testimonials Section -->
+    <section class="section__container">
+      <h2>Testimonials</h2>
+      <h1>What our customers say</h1>
+      <div class="section__grid">
+        <div class="section__card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <h4>Top Tiles & Great Prices at Anuj Ceramics</h4>
+          <p>
+            Good showroom to choose your ceramics. It's a two floored display house, Vertical tiles or elevation work tiles is located in top floor.
+They even have the GI taged Athangudi tiles for the floor, bit high end rage though.
+Also there is paucity in availability of designs & color choices; but the pricing are the best - they even offer discounts Highly recommended!
+          </p>
+          <img src="assets/images/Banner/user2.png" alt="user" />
+          <h5>Muthu Ramanan <i class="fas fa-check-circle"></i></h5>
+          <h6>Verified Customer</h6>
+        </div>
+        <div class="section__card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <h4>Anuj Tiles: Two Floors of Premium Tiles</h4>
+          <p>
+            Exclusive Showroom of Anuj Tiles (Aravind Ceramics), spread on 2 floors.
+            The ground floor covers different types of floor tiles sanitary stuff and stair's tiles
+            First floor covers bathroom tiles, sinks, mirrors etc
+            Located on Porur Kunrathur road, close to Madananthapuram, this shop is easily locatable and accessible.
+            Good Parking facilities and accessibility.
+          </p>
+          <img src="assets/images/Banner/user3.png" alt="user" />
+          <h5>Santhosh Nair <i class="fas fa-check-circle"></i></h5>
+          <h6>Verified Customer</h6>
+        </div>
+        <div class="section__card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <h4>Outstanding Service & Impressive Selection</h4>
+          <p>
+            Wow!! Very beautiful show room with vast collections.. Prices are reasonable according to the design. And the Sales Rep parthiban was very patience and kind in giving information. Had very good experience here at the show room...
+          </p>
+          <img src="assets/images/Banner/user1.png" alt="user" />
+          <h5>Jawahar selvam <i class="fas fa-check-circle"></i></h5>
+          <h6>Verified Customer</h6>
+        </div>
+      </div>
+    </section>
+
+      <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+  <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+          <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">PRODUCTS</h2>
+                      <ul class="footer-list">
+                          <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                          <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                          <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                          <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                          <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                      </ul>
+                  </div>
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">ABOUT US</h2>
+                      <ul class="footer-list">
+                          <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                          <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                          <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                          <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                      </ul>
+                  </div>
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">ACTIVITIES</h2>
+                      <ul class="footer-list">
+                          <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                          <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                          <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                      </ul>
+                  </div>
+                  <div style="width: 25%; max-width: 300px;">
+                      <h2 class="footer-heading">CONTACT</h2>
+                      <ul class="footer-list">
+                          <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                          <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <!-- Social Media Icons using Font Awesome -->
+              <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                  <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                  </a>
+                  <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                  </a>
+                  <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                  </a>
+                  <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                  </a>
+                  <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                      <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                  </a>
+              </div>
+          </div>
+          <!-- Copyright Notice -->
+          <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+              <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+          </div>
+      </div>
+  </footer>
+</div>
+
+
+    <!-- Inline CSS for hover effect -->
+    <style>
+      .fab:hover {
+        opacity: 0.7; /* Optional: Reduce opacity on hover */
+      }
+      
+      /* Media Queries for responsive design */
+      @media (max-width: 768px) {
+        footer {
+          padding: 20px 0; /* Adjust padding for smaller screens */
+        }
+
+        .footer-heading {
+          font-size: 18px; /* Adjust font size for smaller screens */
+        }
+
+        .footer-list li {
+          margin-bottom: 8px; /* Adjust spacing for smaller screens */
+        }
+
+        .footer-list a {
+          font-size: 14px; /* Adjust font size for smaller screens */
+        }
+
+        .fab {
+          font-size: 20px; /* Adjust icon size for smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        footer {
+          padding: 15px 0; /* Further adjust padding for very small screens */
+        }
+
+        .footer-heading {
+          font-size: 16px; /* Further adjust font size for very small screens */
+        }
+
+        .footer-list li {
+          margin-bottom: 6px; /* Further adjust spacing for very small screens */
+        }
+
+        .footer-list a {
+          font-size: 12px; /* Further adjust font size for very small screens */
+        }
+
+        .fab {
+          font-size: 16px; /* Further adjust icon size for very small screens */
+        }
+      }
+      .footer-list {
+          list-style: none; /* Removes bullets */
+          padding: 0; /* Removes default padding */
+          margin: 0; /* Removes default margin */
+      }
+
+      .footer-list li {
+          margin-bottom: 10px; /* Adds space between list items */
+      }
+
+      .footer-list a {
+          text-decoration: none; /* Removes underline */
+          color: #fff; /* Sets text color */
+          transition: color 0.3s ease; /* Adds smooth transition for color change */
+      }
+
+      .footer-list a:hover {
+          color: #ffcc00; /* Changes color on hover */
+      }
+
+    </style>
+  </footer>
+</div>
+
+    <!-- Other sections of your website can go here -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

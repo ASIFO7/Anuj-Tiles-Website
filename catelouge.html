@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue | Aravind Ceramics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="/Anuj Tiles.svg" type="image/svg+xml">
+    <style>
+       body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centering the header text */
+    padding: 20px 40px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+header .logo {
+    position: absolute; /* Position logo absolutely to keep it on the left side */
+    left: 20px; /* Adjust as needed */
+}
+
+header .logo img {
+    max-width: 80px;
+    height: auto;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    flex: 1; /* Allows header text to expand and center itself */
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 2%;
+    }
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 2%;
+        position: relative; /* Ensure relative positioning for mobile */
+        justify-content: center; /* Center the content */
+    }
+
+    header .logo {
+        position: absolute; /* Position logo absolutely to keep it on the left side */
+        left: 10px; /* Adjust as needed */
+    }
+
+    header h1 {
+        font-size: 20px;
+        text-align: center; /* Keep text centered */
+        margin: 0; /* Remove any extra margin */
+        width: calc(100% - 80px); /* Adjust width to ensure text is centered */
+        transform: translateX(50px); /* Move text further to the right */
+    }
+}
+.back-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+}
+.back-button:hover {
+    background-color: #555; /* Darken on hover */
+    transform: translateY(-2px); /* Lift button slightly on hover */
+}
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 5%;
+}
+.intro {
+    /* background-color: #333; */   
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.intro h2 {
+    margin: 0;
+    font-size: 24px;
+}
+.intro p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.gallery-item {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.gallery-item p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 2%;
+    }
+    header h1 {
+        font-size: 24px;
+    }
+    .back-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .gallery {
+        flex-direction: column; /* Stack gallery items vertically on smaller screens */
+        align-items: center; /* Center them on smaller screens */
+        padding: 0 5%; /* Add horizontal padding for better alignment */
+    }
+    .gallery-item {
+        width: 100%; /* Make the gallery items take the full width */
+        max-width: 900px; /* Increase max-width for larger gallery items */
+        margin: 15px 0; /* Adjust vertical margin for better spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 2%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header h1 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .back-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .gallery {
+        flex-direction: column; /* Stack gallery items vertically */
+        align-items: center; /* Center them on smaller screens */
+        padding: 0 5%; /* Add padding to maintain space */
+    }
+    .gallery-item {
+        width: 100%; /* Full width for better visibility on small screens */
+        max-width: 100%; /* Set max-width to 100% to take full available width */
+        margin: 20px 0; /* Increase margin for better spacing */
+    }
+}
+
+
+.banner {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; padding: 10px;">
+        <div class="logo" style="position: relative; display: inline-block; margin-right: auto;">
+            <a href="index.html" style="display: block; width: 100%; max-width: 200px;">
+                <img src="./assets/images/12 X 6 Inch.svg" alt="Anuj Tiles Logo" style="display: block; width: 100%; height: auto;">
+            </a>
+        </div>
+    </header>
+    <img src="./assets/images/Banner/catalogue.jpg" alt="Catalogue Banner" class="banner">
+
+    <main>
+        <section class="intro">
+            <h2>Explore Our Catalogues</h2>
+            <p>Welcome to our catalogue page, where you can discover the latest and comprehensive collection of our premium products. Click on the images below to view or download detailed catalogues. Each collection provides insights into our extensive range of offerings, including Tiles, Bath Fittings and Sanitary Ware. Enjoy browsing and find the perfect solutions for your needs!</p>
+        </section><br>
+
+        <section class="gallery">
+            <a href="./assets//Catalogues/Anuj Tiles Catalogue_2024.pdf" target="_blank" class="gallery-item">
+                <img src="./assets/images/anuj cat.jpg" alt="Anuj Tiles">
+                <p>Anuj Tiles</p>
+            </a>
+            <a href="./assets/Catalogues/Health Ware Catalogue_2024.pdf" target="_blank" class="gallery-item">
+                <img src="./assets/images/healtware cat.jpg" alt="Healthware">
+                <p>Sanitaryware</p>
+            </a>
+            <a href="./assets/Catalogues/Niagara Catalogue -2024.pdf" target="_blank" class="gallery-item">
+                <img src="./assets/images/niagara cat.jpg" alt="Niagara">
+                <p>Niagara</p>
+            </a>
+        </section>
+    </main> <br><br>
+    <style>.gallery {
+        display: flex; /* Use flexbox for layout */
+        overflow: hidden; /* Hide overflow */
+        justify-content: space-between; /* Space between items */
+        margin-bottom: 20px; /* Bottom margin */
+    }
+    
+    .gallery-item {
+        opacity: 0; /* Start with items invisible */
+        transform: translateY(20px); /* Start slightly below */
+        transition: opacity 0.9s ease, transform 0.9s ease; /* Transition for fade and slide */
+        width: 90%; /* Set a width for the items */
+        text-align: center; /* Center align text */
+    }
+    
+    .gallery-item.visible {
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* Slide to original position */
+    }
+    .gallery-item:hover {
+  transform: scale(1.06); /* Slightly increase the scale for a smoother effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow for more depth */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Use a custom easing for a more professional feel */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.01); /* Increase the image scale a bit more for a subtle zoom-in effect */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Matching timing with the container for consistency */
+}
+
+
+
+
+    </style>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const galleryItems = document.querySelectorAll('.gallery-item'); // Select all gallery items
+    
+        // Function to check if an element is in the viewport
+        const isInViewport = (element) => {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight && // Element is visible in the viewport
+                rect.bottom >= 0 // Element is not below the viewport
+            );
+        };
+    
+        const revealGalleryItems = () => {
+            galleryItems.forEach((item, index) => {
+                if (isInViewport(item)) {
+                    setTimeout(() => {
+                        item.classList.add('visible'); // Add visible class for animation
+                    }, index * 200); // Stagger by 200ms for each item
+                } else {
+                    item.classList.remove('visible'); // Remove visible class to reset
+                }
+            });
+        };
+    
+        // Initial check on page load
+        revealGalleryItems();
+        
+        // Check on scroll
+        window.addEventListener('scroll', revealGalleryItems);
+    });
+    </script>
+
+     <!------------ DONE --------------- FOOTER -------------- DONE ------------>
+
+   <!-- 
+      - #FOOTER
+   -->
+      
+<!-- FOOTER -->
+<div id="contact">
+    <footer id="colophon" role="contentinfo" style="background-color: #333; color: #fff; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 15px;">
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">PRODUCTS</h2>
+                        <ul class="footer-list">
+                            <li><a href="index.html" style="text-decoration: none; color: #fff;">Anuj Tiles</a></li>
+                            <li><a href="HealthwareNiagara.html" style="text-decoration: none; color: #fff;">Healthware & Niagara</a></li>
+                            <li><a href="Healtware.html" style="text-decoration: none; color: #fff;">Healthware</a></li>
+                            <li><a href="Niagara.html" style="text-decoration: none; color: #fff;">Niagara</a></li>
+                            <li><a href="catelouge.html" style="text-decoration: none; color: #fff;">Catalogues</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ABOUT US</h2>
+                        <ul class="footer-list">
+                            <li><a href="about test.html" style="text-decoration: none; color: #fff;">Company Overview</a></li>
+                            <li><a href="History.html" style="text-decoration: none; color: #fff;">History</a></li>
+                            <li><a href="Testimonal.html" style="text-decoration: none; color: #fff;">Feedback</a></li>
+                            <li><a href="/index.html#intro" style="text-decoration: none; color: #fff;">Introduction</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">ACTIVITIES</h2>
+                        <ul class="footer-list">
+                            <li><a href="Blog.html" style="text-decoration: none; color: #fff;">Newsletter</a></li>
+                            <li><a href="Branches.html" style="text-decoration: none; color: #fff;">Show Rooms</a></li>
+                            <li><a href="Awards.html" style="text-decoration: none; color: #fff;">Awards</a></li>
+                        </ul>
+                    </div>
+                    <div style="width: 25%; max-width: 300px;">
+                        <h2 class="footer-heading">CONTACT</h2>
+                        <ul class="footer-list">
+                            <li><a href="./We Are Hiring.html" style="text-decoration: none; color: #fff;">Careers</a></li>
+                            <li><a href="contact us.html" style="text-decoration: none; color: #fff;">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Media Icons using Font Awesome -->
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="https://www.youtube.com/@AnujTiles_AravindCeramics" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-youtube" style="font-size: 24px; color: #f73c3c;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anujtiles/" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-instagram" style="font-size: 24px; color: #ff69b4;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/AravindCeramicPvtLtd" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-facebook" style="font-size: 24px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://wa.me/+919551698878" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-whatsapp" style="font-size: 24px; color: #25d366;"></i>
+                    </a>
+                    <a href="https://twitter.com/tiles_anuj" target="_blank" style="text-decoration: none; color: #fff; margin: 0 8px;">
+                        <i class="fab fa-twitter" style="font-size: 24px; color: #1da1f2;"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <p>&copy; 2024 Anuj Tiles | Powered by Anuj Tiles</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+      <!-- Inline CSS for hover effect -->
+      <style>
+        .fab:hover {
+          opacity: 0.7; /* Optional: Reduce opacity on hover */
+        }
+        
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+          footer {
+            padding: 20px 0; /* Adjust padding for smaller screens */
+          }
+  
+          .footer-heading {
+            font-size: 18px; /* Adjust font size for smaller screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 8px; /* Adjust spacing for smaller screens */
+          }
+  
+          .footer-list a {
+            font-size: 14px; /* Adjust font size for smaller screens */
+          }
+  
+          .fab {
+            font-size: 20px; /* Adjust icon size for smaller screens */
+          }
+        }
+  
+        @media (max-width: 480px) {
+          footer {
+            padding: 15px 0; /* Further adjust padding for very small screens */
+          }
+  
+          .footer-heading {
+            font-size: 16px; /* Further adjust font size for very small screens */
+          }
+  
+          .footer-list li {
+            margin-bottom: 6px; /* Further adjust spacing for very small screens */
+          }
+  
+          .footer-list a {
+            font-size: 12px; /* Further adjust font size for very small screens */
+          }
+  
+          .fab {
+            font-size: 16px; /* Further adjust icon size for very small screens */
+          }
+        }
+        .footer-list {
+            list-style: none; /* Removes bullets */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+  
+        .footer-list li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
+  
+        .footer-list a {
+            text-decoration: none; /* Removes underline */
+            color: #fff; /* Sets text color */
+            transition: color 0.3s ease; /* Adds smooth transition for color change */
+        }
+  
+        .footer-list a:hover {
+            color: #ffcc00; /* Changes color on hover */
+        }
+  
+      </style>
+    </footer>
+  </div>
+</body>
+</html>
