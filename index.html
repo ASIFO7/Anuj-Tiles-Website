@@ -1881,8 +1881,24 @@ document.addEventListener('DOMContentLoaded', () => {
           return "I'm doing fine, thank you for asking.";
       }
       else if (lowerMessage.includes("what is your name") || lowerMessage.includes("name")) {
-          return "My name is Asif, I'm a chatbot.";
+          return "My name is Jarvis, I'm a chatbot.";
       }
+      else if (lowerMessage.includes("what is the web developer's name") || 
+         lowerMessage.includes("web developer") || 
+         lowerMessage.includes("developer") || 
+         lowerMessage.includes("who is the web developer") || 
+         lowerMessage.includes("name of the web developer") || 
+         lowerMessage.includes("developer's name")) {
+      return "The name of our web developer is Asif, who specializes in creating dynamic and responsive websites.";
+    }
+      else if (lowerMessage.includes("Asif") || 
+          lowerMessage.includes("Asif Mohamed") || 
+          lowerMessage.includes("Asif Mohamed Mohideen") || 
+          lowerMessage.includes("my name is Asif") || 
+          lowerMessage.includes("I am Asif")) {
+      return "Asif Mohamed Mohideen is a passionate web developer specializing in creating responsive and dynamic websites, focusing on user experience and performance optimization.";
+    }
+
       else if (lowerMessage.includes("contact") || lowerMessage.includes("number")|| lowerMessage.includes("info")) {
           return "Feel free to reach out via email at 'info@anujtiles.com' or call us at (+91)9841722224. We're here to help!";
       }
